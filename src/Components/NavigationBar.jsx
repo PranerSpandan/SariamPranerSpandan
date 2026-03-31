@@ -3,54 +3,58 @@ import logo from '../assets/images/SPS logo backgroundless.png'
 
 const NavigationBar = () => {
     return (
-        <header>
-            <div className="logo-container">
+        <header className="glass-header">
+            <div className="logo-section">
                 <a href="/" className="logo-link">
                     <img src={logo} alt="Sariam Praner Spandan Logo" className="navbar-logo" />
                     <span className="logo-text">SPS NGO</span>
                 </a>
             </div>
-            <nav>
+            
+            <nav className="desktop-nav">
                 <ul className="nav-links">
-                    <li><a href="#home" className="nav-link active">Home</a></li>
-                    <li><a href="#about" className="nav-link">About Us</a></li>
-                    <li><a href="#work" className="nav-link">Our Work</a></li>
-                    <li><a href="#impact" className="nav-link">Impact</a></li>
-                    <li><a href="#contact" className="nav-link">Contact</a></li>
+                    <li><a href="#home" className="nav-item">Home</a></li>
+                    <li><a href="#about" className="nav-item">About</a></li>
+                    <li><a href="#work" className="nav-item">Work</a></li>
+                    <li><a href="#impact" className="nav-item">Impact</a></li>
+                    <li><a href="#contact" className="nav-item">Contact</a></li>
                 </ul>
             </nav>
-            <div className="cta-wrapper">
-                <a href="#donate" className="btn-cta">Support Nature</a>
+
+            <div className="cta-container">
+                <a href="#donate" className="btn-primary">Support Nature</a>
             </div>
             
             <style jsx>{`
-                .logo-container {
-                    display: flex;
-                    align-items: center;
-                }
                 .logo-link {
                     display: flex;
                     align-items: center;
                     gap: 12px;
-                    font-family: 'Outfit', sans-serif;
-                    font-size: 1.25rem;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
                     font-weight: 800;
                     color: var(--primary);
                 }
                 .navbar-logo {
-                    width: 42px;
-                    height: 42px;
+                    width: 36px;
+                    height: 36px;
                     object-fit: contain;
-                    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
                 }
-                .logo-link:hover .navbar-logo {
-                    transform: scale(1.1) rotate(5deg);
+                .nav-links {
+                    display: flex;
+                    gap: 2rem;
+                    list-style: none;
                 }
-                .logo-text {
-                    letter-spacing: -0.5px;
+                .nav-item {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    color: var(--text-secondary);
+                    transition: var(--transition);
                 }
-                @media (max-width: 992px) {
-                    .nav-links, .cta-wrapper {
+                .nav-item:hover {
+                    color: var(--primary);
+                }
+                @media (max-width: 900px) {
+                    .desktop-nav, .cta-container {
                         display: none;
                     }
                 }

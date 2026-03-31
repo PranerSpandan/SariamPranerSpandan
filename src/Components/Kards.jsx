@@ -29,7 +29,7 @@ const Kards = () => {
     ];
 
     return (
-        <section className="initiatives-section" id="work">
+        <section className="bg-accent" id="work">
             <div className="section-header">
                 <span className="section-label">What We Do</span>
                 <h2 className="section-title">Our Sustainable <br/><span className="text-leaf">Initiatives</span></h2>
@@ -47,7 +47,7 @@ const Kards = () => {
                             <p className="card-description">{item.description}</p>
                             <a href={`#${item.label.toLowerCase()}`} className="card-link">
                                 Explore Project
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                             </a>
                         </div>
                     </div>
@@ -55,51 +55,52 @@ const Kards = () => {
             </div>
 
             <style jsx>{`
-                .initiatives-section {
-                    padding: 8rem 5%;
-                    max-width: 1300px;
-                    margin: 0 auto;
-                }
                 .section-header {
-                    margin-bottom: 4rem;
+                    margin-bottom: 5rem;
+                    max-width: 1300px;
+                    margin: 0 auto 5rem;
                 }
                 .section-label {
                     color: var(--secondary);
                     font-weight: 700;
-                    letter-spacing: 2px;
+                    letter-spacing: 3px;
                     text-transform: uppercase;
-                    font-size: 0.85rem;
+                    font-size: 0.8rem;
                 }
                 .section-title {
-                    font-size: 3.5rem;
-                    margin-top: 1rem;
+                    font-size: 4rem;
+                    margin-top: 1.5rem;
                     color: var(--primary);
+                    line-height: 1.2;
                 }
                 .text-leaf { color: var(--secondary); }
 
                 .initiatives-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-                    gap: 2.5rem;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 3rem;
+                    max-width: 1400px;
+                    margin: 0 auto;
                 }
 
                 .initiative-card {
-                    background: var(--white);
-                    border-radius: 28px;
+                    background: var(--surface-lowest);
+                    border-radius: var(--radius-xl);
                     overflow: hidden;
-                    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
                     transition: var(--transition);
                     cursor: pointer;
                     position: relative;
+                    /* Ambient Light Shadow */
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
                 }
                 .initiative-card:hover {
-                    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+                    box-shadow: 0 40px 80px rgba(28, 28, 25, 0.08);
                     transform: translateY(-8px);
                 }
 
                 .card-media {
                     width: 100%;
-                    height: 280px;
+                    height: 320px;
                     overflow: hidden;
                     position: relative;
                 }
@@ -115,40 +116,37 @@ const Kards = () => {
 
                 .card-badge {
                     position: absolute;
-                    top: 20px;
-                    right: 20px;
-                    padding: 6px 14px;
+                    top: 24px;
+                    right: 24px;
+                    padding: 8px 16px;
                     border-radius: 100px;
                     font-weight: 700;
-                    font-size: 0.75rem;
+                    font-size: 0.7rem;
                     color: var(--primary);
                     text-transform: uppercase;
+                    letter-spacing: 1px;
                 }
 
                 .card-body {
-                    padding: 2.5rem;
+                    padding: var(--spacing-8);
                 }
                 .card-title {
-                    font-size: 1.5rem;
-                    margin-bottom: 1rem;
+                    font-size: 1.75rem;
+                    margin-bottom: 1.2rem;
                     color: var(--primary);
                 }
                 .card-description {
-                    font-size: 1rem;
-                    color: var(--text-muted);
-                    margin-bottom: 2rem;
-                    line-height: 1.7;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
+                    font-size: 1.05rem;
+                    color: var(--text-secondary);
+                    margin-bottom: 2.5rem;
+                    line-height: 1.75;
                 }
                 .card-link {
                     display: flex;
                     align-items: center;
                     gap: 12px;
                     color: var(--secondary);
-                    font-weight: 700;
+                    font-weight: 800;
                     font-size: 0.95rem;
                     transition: var(--transition);
                 }
@@ -158,7 +156,7 @@ const Kards = () => {
                 
                 @media (max-width: 900px) {
                     .initiatives-grid { grid-template-columns: 1fr; }
-                    .section-title { font-size: 2.5rem; }
+                    .section-title { font-size: 3rem; }
                 }
             `}</style>
         </section>
