@@ -1,48 +1,62 @@
 import React from 'react'
-import logo from '../assets/images/logo.png'
-function NavigationBar() {
-  return (
-    <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src={logo} alt="Sariam Praner Spandan" width="24" height="24" class="d-inline-block align-text-top" />
-          </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+import logo from '../assets/images/SPS logo backgroundless.png'
+
+const NavigationBar = () => {
+    return (
+        <header>
+            <div className="logo-container">
+                <a href="/" className="logo-link">
+                    <img src={logo} alt="Sariam Praner Spandan Logo" className="navbar-logo" />
+                    <span className="logo-text">SPS NGO</span>
                 </a>
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                  <li><hr className="dropdown-divider" /></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+            </div>
+            <nav>
+                <ul className="nav-links">
+                    <li><a href="#home" className="nav-link active">Home</a></li>
+                    <li><a href="#about" className="nav-link">About Us</a></li>
+                    <li><a href="#work" className="nav-link">Our Work</a></li>
+                    <li><a href="#impact" className="nav-link">Impact</a></li>
+                    <li><a href="#contact" className="nav-link">Contact</a></li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </div>
-  )
+            </nav>
+            <div className="cta-wrapper">
+                <a href="#donate" className="btn-cta">Support Nature</a>
+            </div>
+            
+            <style jsx>{`
+                .logo-container {
+                    display: flex;
+                    align-items: center;
+                }
+                .logo-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 1.25rem;
+                    font-weight: 800;
+                    color: var(--primary);
+                }
+                .navbar-logo {
+                    width: 42px;
+                    height: 42px;
+                    object-fit: contain;
+                    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                }
+                .logo-link:hover .navbar-logo {
+                    transform: scale(1.1) rotate(5deg);
+                }
+                .logo-text {
+                    letter-spacing: -0.5px;
+                }
+                @media (max-width: 992px) {
+                    .nav-links, .cta-wrapper {
+                        display: none;
+                    }
+                }
+            `}</style>
+        </header>
+    )
 }
 
 export default NavigationBar
