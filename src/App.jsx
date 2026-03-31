@@ -4,6 +4,7 @@ import WorkSlideShow from './Components/WorkSlideShow'
 import Kards from './Components/Kards'
 import AboutSection from './Components/AboutSection'
 import BottomBar from './Components/BottomBar'
+import BackToTop from './Components/BackToTop'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <AboutSection/>
       <Kards/>
       <BottomBar/>
+      <BackToTop/>
     </div>
   )
 }
