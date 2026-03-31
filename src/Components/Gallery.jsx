@@ -6,7 +6,7 @@ const Gallery = () => {
     const [lightbox, setLightbox] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const categories = ['All', 'Plantation', 'Awareness', 'Schools', 'Team']
+    const categories = ['All', 'Plantation', 'Sapling Drive', 'Nature Camp', 'Awareness']
 
     useEffect(() => {
         fetch('/gallery.json')

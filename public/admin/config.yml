@@ -1,59 +1,58 @@
 backend:
   name: github
-  repo: PranerSpandan/SariamPranerSpandan   # ← your GitHub repo
-  branch: main                               # ← your branch
+  repo: PranerSpandan/SariamPranerSpandan
+  branch: main
 
-# Where uploaded photos/videos are stored (inside /public/gallery/)
+# Where uploaded photos/videos are stored
 media_folder: "public/gallery"
 public_folder: "/gallery"
 
-# The site URL – used for the OAuth redirect during login
 site_url: https://pranerspandan.github.io/SariamPranerSpandan
 
 collections:
   - name: "gallery"
-    label: "Gallery"
+    label: "🖼️ Gallery"
     label_singular: "Photo / Video"
     description: >
       Add, edit, or remove photos and videos from the NGO website gallery.
-      Just upload a file, fill in the details and click Publish.
-    folder: ""                # items are stored as a JSON file, not individual files
-    format: json
-    extension: json
-    create: false             # we manage a single gallery.json file
+      Just upload a file, fill in the details, and click Publish.
+      Your photo will appear on the website within seconds!
     files:
       - label: "Gallery Items"
-        name: "gallery"
+        name: "gallery_items"
         file: "public/gallery.json"
-        description: "All gallery photos and videos"
         fields:
           - label: "Gallery Items"
             name: ""
             widget: list
-            label_singular: "Item"
+            label_singular: "Photo / Video"
+            summary: "{{fields.title}} — {{fields.category}}"
             fields:
-              - { label: "ID", name: id, widget: number, hint: "Unique number for this item" }
+              - { label: "ID", name: id, widget: number, hint: "Give it a unique number (e.g. 26, 27, 28...)" }
               - label: "Type"
                 name: type
                 widget: select
                 options:
-                  - { label: "Photo", value: image }
-                  - { label: "Video", value: video }
+                  - { label: "📷 Photo", value: image }
+                  - { label: "🎥 Video", value: video }
                 default: image
-              - { label: "Title", name: title, widget: string }
-              - { label: "Caption", name: caption, widget: text, required: false }
-              - label: "Photo / Video File"
+              - { label: "Title", name: title, widget: string, hint: "Short title for the photo, e.g. Tree Plantation Drive 2025" }
+              - { label: "Caption", name: caption, widget: text, required: false, hint: "One sentence describing what's happening in the photo" }
+              - label: "Upload Photo / Video"
                 name: src
                 widget: image
                 media_folder: "/public/gallery"
                 public_folder: "/gallery"
+                hint: "Upload from your phone or computer"
               - label: "Category"
                 name: category
                 widget: select
+                hint: "Choose the category that best fits this photo"
                 options:
-                  - Plantation
-                  - Awareness
-                  - Schools
-                  - Team
-                  - Event
-                  - Other
+                  - { label: "🌳 Tree Plantation", value: Plantation }
+                  - { label: "🌱 Sapling Drive", value: "Sapling Drive" }
+                  - { label: "🏕️ Nature Camp", value: "Nature Camp" }
+                  - { label: "📢 Awareness", value: Awareness }
+                  - { label: "🏫 Schools", value: Schools }
+                  - { label: "👥 Team", value: Team }
+                  - { label: "🎉 Event", value: Event }
