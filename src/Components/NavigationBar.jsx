@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/SPS logo backgroundless.png'
+import logo from '../assets/images/SPS logo backgroundless.png' // universal logo
 
 const NavigationBar = () => {
     return (
@@ -15,8 +15,8 @@ const NavigationBar = () => {
                 <ul className="nav-links">
                     <li><a href="#home" className="nav-item">Home</a></li>
                     <li><a href="#about" className="nav-item">About</a></li>
+                    <li><a href="#gallery" className="nav-item">Gallery</a></li>
                     <li><a href="#work" className="nav-item">Work</a></li>
-                    <li><a href="#impact" className="nav-item">Impact</a></li>
                     <li><a href="#contact" className="nav-item">Contact</a></li>
                 </ul>
             </nav>

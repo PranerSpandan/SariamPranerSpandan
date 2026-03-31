@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "type": "image",
+    "title": "Tree Plantation Drive 2023",
+    "caption": "Students planting saplings at a local school.",
+    "src": "/gallery/c1.jpg",
+    "category": "Plantation"
+  },
+  {
+    "id": 2,
+    "type": "image",
+    "title": "NGO Team Photo",
+    "caption": "Our dedicated volunteers at Sariam.",
+    "src": "/gallery/c2.jpeg",
+    "category": "Team"
+  },
+  {
+    "id": 3,
+    "type": "image",
+    "title": "Awareness Programme",
+    "caption": "Educating children about nature conservation.",
+    "src": "/gallery/c3.jpg",
+    "category": "Awareness"
+  },
+  {
+    "id": 4,
+    "type": "image",
+    "title": "School Outreach",
+    "caption": "Connecting students with nature at local schools.",
+    "src": "/gallery/c4.jpg",
+    "category": "Schools"
+  }
+]
