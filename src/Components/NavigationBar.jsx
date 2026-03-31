@@ -1,61 +1,171 @@
-import React from 'react'
-import logo from '../assets/images/SPS logo backgroundless.png' // universal logo
+import React, { useState } from 'react'
+import logo from '../assets/images/SPS logo backgroundless.png'
 
 const NavigationBar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <header className="glass-header">
             <div className="logo-section">
                 <a href="/" className="logo-link">
                     <img src={logo} alt="Sariam Praner Spandan Logo" className="navbar-logo" />
-                    <span className="logo-text">SPS NGO</span>
+                    <span className="logo-text">Sariam Praner Spandan</span>
                 </a>
             </div>
             
-            <nav className="desktop-nav">
+            <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
-                    <li><a href="#home" className="nav-item">Home</a></li>
-                    <li><a href="#about" className="nav-item">About</a></li>
-                    <li><a href="#gallery" className="nav-item">Gallery</a></li>
-                    <li><a href="#work" className="nav-item">Work</a></li>
-                    <li><a href="#contact" className="nav-item">Contact</a></li>
+                    <li><a href="#home" className="nav-item" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                    <li><a href="#about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</a></li>
+                    <li><a href="#gallery" className="nav-item" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
+                    <li><a href="#work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+                    <li><a href="#contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+                    <li className="mobile-cta">
+                         <a href="#donate" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support Nature</a>
+                    </li>
                 </ul>
             </nav>
 
             <div className="cta-container">
                 <a href="#donate" className="btn-primary">Support Nature</a>
             </div>
+
+            <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Navigation">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
             
             <style jsx>{`
                 .logo-link {
                     display: flex;
                     align-items: center;
-                    gap: 12px;
+                    gap: 16px;
                     font-family: 'Plus Jakarta Sans', sans-serif;
                     font-weight: 800;
                     color: var(--primary);
+                    text-decoration: none;
                 }
                 .navbar-logo {
-                    width: 36px;
-                    height: 36px;
+                    width: 52px;
+                    height: 52px;
                     object-fit: contain;
+                    transition: var(--transition);
+                }
+                .logo-text {
+                    font-size: 1.35rem;
+                    white-space: nowrap;
+                    letter-spacing: -0.02em;
                 }
                 .nav-links {
                     display: flex;
                     gap: 2rem;
                     list-style: none;
+                    align-items: center;
+                    margin: 0;
+                    padding: 0;
                 }
                 .nav-item {
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                     font-weight: 600;
                     color: var(--text-secondary);
                     transition: var(--transition);
+                    text-decoration: none;
                 }
                 .nav-item:hover {
                     color: var(--primary);
                 }
+                .mobile-cta {
+                    display: none;
+                }
+
+                /* Hamburger Icon */
+                .hamburger {
+                    display: none;
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    padding: 8px;
+                    z-index: 1100;
+                    border-radius: 8px;
+                    transition: var(--transition);
+                }
+                .hamburger:hover {
+                    background: rgba(0,0,0,0.05);
+                }
+                .bar {
+                    display: block;
+                    width: 24px;
+                    height: 3px;
+                    margin: 5px 0;
+                    background-color: var(--primary);
+                    transition: all 0.3s ease-in-out;
+                    border-radius: 2px;
+                }
+
+                @media (max-width: 1100px) {
+                    .logo-text {
+                        font-size: 1.1rem;
+                    }
+                    .nav-links {
+                        gap: 1.5rem;
+                    }
+                }
+
                 @media (max-width: 900px) {
-                    .desktop-nav, .cta-container {
+                    .nav-menu {
+                        position: fixed;
+                        top: 0;
+                        right: -100%;
+                        width: 100%;
+                        height: 100vh;
+                        background: var(--bg-main);
+                        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                        z-index: 1050;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .nav-menu.active {
+                        right: 0;
+                    }
+                    .nav-links {
+                        flex-direction: column;
+                        gap: 3rem;
+                    }
+                    .nav-item {
+                        font-size: 2rem;
+                        font-weight: 700;
+                    }
+                    .mobile-cta {
+                        display: block;
+                    }
+                    .cta-container {
                         display: none;
+                    }
+                    .hamburger {
+                        display: block;
+                    }
+                    /* Hamburger Animation */
+                    .hamburger.active .bar:nth-child(2) {
+                        opacity: 0;
+                        transform: translateX(-20px);
+                    }
+                    .hamburger.active .bar:nth-child(1) {
+                        transform: translateY(8px) rotate(45deg);
+                    }
+                    .hamburger.active .bar:nth-child(3) {
+                        transform: translateY(-8px) rotate(-45deg);
+                    }
+                }
+
+                @media (max-width: 500px) {
+                    .logo-text {
+                        display: none;
+                    }
+                    .navbar-logo {
+                        width: 48px;
+                        height: 48px;
                     }
                 }
             `}</style>
