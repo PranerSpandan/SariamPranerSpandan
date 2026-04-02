@@ -23,7 +23,7 @@ collections:
         file: "public/gallery.json"
         fields:
           - label: "Gallery Items"
-            name: ""
+            name: "items"
             widget: list
             label_singular: "Photo / Video"
             summary: "{{fields.title}} — {{fields.category}}"

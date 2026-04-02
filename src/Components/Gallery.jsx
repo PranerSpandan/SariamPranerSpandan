@@ -12,7 +12,7 @@ const Gallery = () => {
         fetch(`${import.meta.env.BASE_URL}gallery.json`)
             .then(res => res.json())
             .then(data => {
-                setItems(data)
+                setItems(data.items || [])
                 setLoading(false)
             })
             .catch(() => setLoading(false))

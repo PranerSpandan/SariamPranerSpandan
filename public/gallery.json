@@ -1,202 +1,204 @@
-[
-  {
-    "id": 1,
-    "type": "image",
-    "title": "Awareness Session",
-    "caption": "Educating students about the importance of nature conservation.",
-    "src": "/gallery/AGC_20250719_122051915.jpg",
-    "category": "Awareness"
-  },
-  {
-    "id": 2,
-    "type": "image",
-    "title": "Awareness Programme",
-    "caption": "Bringing environmental awareness to the community.",
-    "src": "/gallery/IMG20250103123202.jpg",
-    "category": "Awareness"
-  },
-  {
-    "id": 3,
-    "type": "image",
-    "title": "Awareness Drive",
-    "caption": "Spreading the message of green living among youth.",
-    "src": "/gallery/IMG20250103123256.jpg",
-    "category": "Awareness"
-  },
-  {
-    "id": 4,
-    "type": "image",
-    "title": "Community Awareness",
-    "caption": "School students engaged in an interactive awareness session.",
-    "src": "/gallery/IMG20250103123601.jpg",
-    "category": "Awareness"
-  },
-  {
-    "id": 5,
-    "type": "image",
-    "title": "Nature Study Camp 2025",
-    "caption": "Participants at the annual Nature Study Camp, January 2025.",
-    "src": "/gallery/AGC_20250112_163500968.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 6,
-    "type": "image",
-    "title": "Camp Activities",
-    "caption": "Young nature enthusiasts exploring the natural world.",
-    "src": "/gallery/AGC_20250112_163517381.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 7,
-    "type": "image",
-    "title": "Camp Day 1",
-    "caption": "Students arrive and set up at the Nature Study Camp.",
-    "src": "/gallery/IMG-20250113-WA0026.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 8,
-    "type": "image",
-    "title": "Field Study",
-    "caption": "Learning about local biodiversity in the field.",
-    "src": "/gallery/IMG-20250113-WA0030.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 9,
-    "type": "image",
-    "title": "Group Session",
-    "caption": "Team discussion during the Nature Study Camp.",
-    "src": "/gallery/IMG-20250113-WA0036.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 10,
-    "type": "image",
-    "title": "Nature Walk",
-    "caption": "Exploring the forest trails with our student volunteers.",
-    "src": "/gallery/IMG-20250113-WA0042.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 11,
-    "type": "image",
-    "title": "Camp Evening",
-    "caption": "Evening bonding session at the Nature Study Camp 2025.",
-    "src": "/gallery/IMG-20250113-WA0054.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 12,
-    "type": "image",
-    "title": "Learning Together",
-    "caption": "Students documenting their nature observations.",
-    "src": "/gallery/IMG-20250113-WA0058.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 13,
-    "type": "image",
-    "title": "Camp Reflections",
-    "caption": "Group reflection and sharing at the end of the camp day.",
-    "src": "/gallery/IMG-20250113-WA0068.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 14,
-    "type": "image",
-    "title": "Camp Highlights",
-    "caption": "Memorable moments from Nature Study Camp 2025.",
-    "src": "/gallery/IMG-20250113-WA0094.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 15,
-    "type": "image",
-    "title": "Certificate Distribution",
-    "caption": "Young participants receiving their camp certificates.",
-    "src": "/gallery/IMG-20250113-WA0134.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 16,
-    "type": "image",
-    "title": "Closing Ceremony",
-    "caption": "The closing ceremony of the 2025 Nature Study Camp.",
-    "src": "/gallery/IMG-20250113-WA0140.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 17,
-    "type": "image",
-    "title": "Camp Group Photo",
-    "caption": "All participants at the Nature Study Camp 2025.",
-    "src": "/gallery/IMG-20250113-WA0142.jpg",
-    "category": "Nature Camp"
-  },
-  {
-    "id": 18,
-    "type": "image",
-    "title": "Sapling Distribution",
-    "caption": "Distributing saplings to families and students in the community.",
-    "src": "/gallery/AGC_20250718_152116107.jpg",
-    "category": "Sapling Drive"
-  },
-  {
-    "id": 19,
-    "type": "image",
-    "title": "Sapling Drive 2025",
-    "caption": "Handing out tree saplings for home planting.",
-    "src": "/gallery/AGC_20250724_125829710.jpg",
-    "category": "Sapling Drive"
-  },
-  {
-    "id": 20,
-    "type": "image",
-    "title": "Sapling Handover",
-    "caption": "Every sapling is a promise to the planet.",
-    "src": "/gallery/AGC_20250724_125840578.jpg",
-    "category": "Sapling Drive"
-  },
-  {
-    "id": 21,
-    "type": "image",
-    "title": "Green Initiative",
-    "caption": "Community members receiving saplings during our July 2025 drive.",
-    "src": "/gallery/AGC_20250724_125921218.jpg",
-    "category": "Sapling Drive"
-  },
-  {
-    "id": 22,
-    "type": "image",
-    "title": "Sapling Collection",
-    "caption": "Preparing saplings for distribution at the local event.",
-    "src": "/gallery/IMG20250716125510.jpg",
-    "category": "Sapling Drive"
-  },
-  {
-    "id": 23,
-    "type": "image",
-    "title": "Tree Plantation Drive",
-    "caption": "Planting trees to restore the green cover in the region.",
-    "src": "/gallery/AGC_20250719_135733743.jpg",
-    "category": "Plantation"
-  },
-  {
-    "id": 24,
-    "type": "image",
-    "title": "Planting Together",
-    "caption": "Volunteers and students planting trees side by side.",
-    "src": "/gallery/AGC_20250719_140144554.jpg",
-    "category": "Plantation"
-  },
-  {
-    "id": 25,
-    "type": "image",
-    "title": "Roots of Change",
-    "caption": "Every tree planted is a step towards a greener future.",
-    "src": "/gallery/AGC_20250719_141414241.jpg",
-    "category": "Plantation"
-  }
-]
+{
+  "items": [
+    {
+      "id": 1,
+      "type": "image",
+      "title": "Awareness Session",
+      "caption": "Educating students about the importance of nature conservation.",
+      "src": "/gallery/AGC_20250719_122051915.jpg",
+      "category": "Awareness"
+    },
+    {
+      "id": 2,
+      "type": "image",
+      "title": "Awareness Programme",
+      "caption": "Bringing environmental awareness to the community.",
+      "src": "/gallery/IMG20250103123202.jpg",
+      "category": "Awareness"
+    },
+    {
+      "id": 3,
+      "type": "image",
+      "title": "Awareness Drive",
+      "caption": "Spreading the message of green living among youth.",
+      "src": "/gallery/IMG20250103123256.jpg",
+      "category": "Awareness"
+    },
+    {
+      "id": 4,
+      "type": "image",
+      "title": "Community Awareness",
+      "caption": "School students engaged in an interactive awareness session.",
+      "src": "/gallery/IMG20250103123601.jpg",
+      "category": "Awareness"
+    },
+    {
+      "id": 5,
+      "type": "image",
+      "title": "Nature Study Camp 2025",
+      "caption": "Participants at the annual Nature Study Camp, January 2025.",
+      "src": "/gallery/AGC_20250112_163500968.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 6,
+      "type": "image",
+      "title": "Camp Activities",
+      "caption": "Young nature enthusiasts exploring the natural world.",
+      "src": "/gallery/AGC_20250112_163517381.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 7,
+      "type": "image",
+      "title": "Camp Day 1",
+      "caption": "Students arrive and set up at the Nature Study Camp.",
+      "src": "/gallery/IMG-20250113-WA0026.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 8,
+      "type": "image",
+      "title": "Field Study",
+      "caption": "Learning about local biodiversity in the field.",
+      "src": "/gallery/IMG-20250113-WA0030.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 9,
+      "type": "image",
+      "title": "Group Session",
+      "caption": "Team discussion during the Nature Study Camp.",
+      "src": "/gallery/IMG-20250113-WA0036.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 10,
+      "type": "image",
+      "title": "Nature Walk",
+      "caption": "Exploring the forest trails with our student volunteers.",
+      "src": "/gallery/IMG-20250113-WA0042.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 11,
+      "type": "image",
+      "title": "Camp Evening",
+      "caption": "Evening bonding session at the Nature Study Camp 2025.",
+      "src": "/gallery/IMG-20250113-WA0054.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 12,
+      "type": "image",
+      "title": "Learning Together",
+      "caption": "Students documenting their nature observations.",
+      "src": "/gallery/IMG-20250113-WA0058.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 13,
+      "type": "image",
+      "title": "Camp Reflections",
+      "caption": "Group reflection and sharing at the end of the camp day.",
+      "src": "/gallery/IMG-20250113-WA0068.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 14,
+      "type": "image",
+      "title": "Camp Highlights",
+      "caption": "Memorable moments from Nature Study Camp 2025.",
+      "src": "/gallery/IMG-20250113-WA0094.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 15,
+      "type": "image",
+      "title": "Certificate Distribution",
+      "caption": "Young participants receiving their camp certificates.",
+      "src": "/gallery/IMG-20250113-WA0134.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 16,
+      "type": "image",
+      "title": "Closing Ceremony",
+      "caption": "The closing ceremony of the 2025 Nature Study Camp.",
+      "src": "/gallery/IMG-20250113-WA0140.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 17,
+      "type": "image",
+      "title": "Camp Group Photo",
+      "caption": "All participants at the Nature Study Camp 2025.",
+      "src": "/gallery/IMG-20250113-WA0142.jpg",
+      "category": "Nature Camp"
+    },
+    {
+      "id": 18,
+      "type": "image",
+      "title": "Sapling Distribution",
+      "caption": "Distributing saplings to families and students in the community.",
+      "src": "/gallery/AGC_20250718_152116107.jpg",
+      "category": "Sapling Drive"
+    },
+    {
+      "id": 19,
+      "type": "image",
+      "title": "Sapling Drive 2025",
+      "caption": "Handing out tree saplings for home planting.",
+      "src": "/gallery/AGC_20250724_125829710.jpg",
+      "category": "Sapling Drive"
+    },
+    {
+      "id": 20,
+      "type": "image",
+      "title": "Sapling Handover",
+      "caption": "Every sapling is a promise to the planet.",
+      "src": "/gallery/AGC_20250724_125840578.jpg",
+      "category": "Sapling Drive"
+    },
+    {
+      "id": 21,
+      "type": "image",
+      "title": "Green Initiative",
+      "caption": "Community members receiving saplings during our July 2025 drive.",
+      "src": "/gallery/AGC_20250724_125921218.jpg",
+      "category": "Sapling Drive"
+    },
+    {
+      "id": 22,
+      "type": "image",
+      "title": "Sapling Collection",
+      "caption": "Preparing saplings for distribution at the local event.",
+      "src": "/gallery/IMG20250716125510.jpg",
+      "category": "Sapling Drive"
+    },
+    {
+      "id": 23,
+      "type": "image",
+      "title": "Tree Plantation Drive",
+      "caption": "Planting trees to restore the green cover in the region.",
+      "src": "/gallery/AGC_20250719_135733743.jpg",
+      "category": "Plantation"
+    },
+    {
+      "id": 24,
+      "type": "image",
+      "title": "Planting Together",
+      "caption": "Volunteers and students planting trees side by side.",
+      "src": "/gallery/AGC_20250719_140144554.jpg",
+      "category": "Plantation"
+    },
+    {
+      "id": 25,
+      "type": "image",
+      "title": "Roots of Change",
+      "caption": "Every tree planted is a step towards a greener future.",
+      "src": "/gallery/AGC_20250719_141414241.jpg",
+      "category": "Plantation"
+    }
+  ]
+}
