@@ -15,19 +15,19 @@ const NavigationBar = () => {
             
             <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
-                    <li><a href="#home" className="nav-item" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                   
                     <li><a href="#about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</a></li>
-                    <li><a href="#gallery" className="nav-item" onClick={() => setIsMenuOpen(false)}>Gallery</a></li>
-                    <li><a href="#work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+                    <li><a href="#gallery" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+                    <li><a href="#workwithus" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</a></li>
                     <li><a href="#contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
                     <li className="mobile-cta">
-                         <a href="#donate" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support Nature</a>
+                         <a href="#donate" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</a>
                     </li>
                 </ul>
             </nav>
 
             <div className="cta-container">
-                <a href="#donate" className="btn-primary">Support Nature</a>
+                <a href="#donate" className="btn-primary">Support</a>
             </div>
 
             <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Navigation">
@@ -47,13 +47,13 @@ const NavigationBar = () => {
                     text-decoration: none;
                 }
                 .navbar-logo {
-                    width: 52px;
-                    height: 52px;
+                    width: clamp(60px, 8vw, 75px);
+                    height: auto;
                     object-fit: contain;
                     transition: var(--transition);
                 }
                 .logo-text {
-                    font-size: 1.35rem;
+                    font-size: clamp(1rem, 4vw, 1.5rem);
                     white-space: nowrap;
                     letter-spacing: -0.02em;
                 }
@@ -104,15 +104,12 @@ const NavigationBar = () => {
                 }
 
                 @media (max-width: 1100px) {
-                    .logo-text {
-                        font-size: 1.1rem;
-                    }
                     .nav-links {
                         gap: 1.5rem;
                     }
                 }
 
-                @media (max-width: 900px) {
+                @media (max-width: 1000px) {
                     .nav-menu {
                         position: fixed;
                         top: 0;
@@ -160,12 +157,21 @@ const NavigationBar = () => {
                 }
 
                 @media (max-width: 500px) {
-                    .logo-text {
-                        display: none;
+                    .glass-header {
+                        width: 96%;
+                        padding: 0.6rem 1rem;
                     }
-                    .navbar-logo {
-                        width: 48px;
-                        height: 48px;
+                    .logo-link {
+                        gap: 8px;
+                    }
+                    .logo-text {
+                        font-size: 0.9rem; /* Fallback for very small */
+                        font-size: clamp(0.75rem, 3.5vw, 1rem);
+                    }
+                }
+                @media (max-width: 380px) {
+                    .logo-text {
+                        letter-spacing: -0.04em; /* Tighter on tiny screens */
                     }
                 }
             `}</style>

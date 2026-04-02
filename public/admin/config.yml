@@ -2,6 +2,7 @@ backend:
   name: github
   repo: PranerSpandan/SariamPranerSpandan
   branch: main
+  base_url: https://sveltia-cms-auth.vercel.app
 
 # Where uploaded photos/videos are stored
 media_folder: "public/gallery"

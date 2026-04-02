@@ -9,7 +9,7 @@ const Gallery = () => {
     const categories = ['All', 'Plantation', 'Sapling Drive', 'Nature Camp', 'Awareness']
 
     useEffect(() => {
-        fetch('/gallery.json')
+        fetch(`${import.meta.env.BASE_URL}gallery.json`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
@@ -22,6 +22,13 @@ const Gallery = () => {
 
     const openLightbox = (item) => setLightbox(item)
     const closeLightbox = () => setLightbox(null)
+
+    // Helper to fix GitHub Pages subpath issues for media fetched from CMS JSON
+    const resolvePath = (path) => {
+        if (!path) return '';
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+    };
 
     // Keyboard close
     useEffect(() => {
@@ -82,9 +89,9 @@ const Gallery = () => {
                             onKeyDown={e => e.key === 'Enter' && openLightbox(item)}
                         >
                             {item.type === 'video' ? (
-                                <video src={item.src} muted loop className="gallery-media" />
+                                <video src={resolvePath(item.src)} muted loop className="gallery-media" />
                             ) : (
-                                <img src={item.src} alt={item.title} className="gallery-media" loading="lazy" />
+                                <img src={resolvePath(item.src)} alt={item.title} className="gallery-media" loading="lazy" />
                             )}
                             <div className="gallery-overlay">
                                 <span className="gallery-cat">{item.category}</span>
@@ -105,9 +112,9 @@ const Gallery = () => {
                     <div className="lightbox-box" onClick={e => e.stopPropagation()}>
                         <button className="lightbox-close" onClick={closeLightbox} aria-label="Close">✕</button>
                         {lightbox.type === 'video' ? (
-                            <video src={lightbox.src} controls autoPlay className="lightbox-media" />
+                            <video src={resolvePath(lightbox.src)} controls autoPlay className="lightbox-media" />
                         ) : (
-                            <img src={lightbox.src} alt={lightbox.title} className="lightbox-media" />
+                            <img src={resolvePath(lightbox.src)} alt={lightbox.title} className="lightbox-media" />
                         )}
                         <div className="lightbox-info">
                             <span className="gallery-cat">{lightbox.category}</span>
