@@ -1,21 +1,21 @@
 {
     "governingBody": [
-        { "name": "[Name Here]", "role": "President", "photo": "" },
-        { "name": "[Name Here]", "role": "Vice President", "photo": "" },
-        { "name": "[Name Here]", "role": "Secretary", "photo": "" },
-        { "name": "[Name Here]", "role": "Assistant Secretary", "photo": "" },
-        { "name": "[Name Here]", "role": "Treasurer", "photo": "" },
-        { "name": "[Name Here]", "role": "Assistant Treasurer", "photo": "" },
-        { "name": "[Name Here]", "role": "Executive Member", "photo": "" }
+        { "name": "Mrs. Moumita Sarkar", "role": "President", "photo": "" },
+        { "name": "Mr. Sudip Dutta", "role": "Vice President", "photo": "" },
+        { "name": "Mr. Bubun Ghosh", "role": "Secretary", "photo": "" },
+        { "name": "Mr. Rajesh Barai", "role": "Assistant Secretary", "photo": "" },
+        { "name": "Mrs. Suchitra Mallick", "role": "Treasurer", "photo": "" },
+        { "name": "Mrs. Tulshi Roy", "role": "Assistant Treasurer", "photo": "" },
+        { "name": "Mr. Abhinendu Roy", "role": "Executive Member", "photo": "" }
     ],
     "generalMembers": [
-        "Member Name 1",
-        "Member Name 2",
-        "Member Name 3",
-        "Member Name 4",
-        "Member Name 5",
-        "Member Name 6",
-        "Member Name 7",
-        "Member Name 8"
+        "Ms. Payel Sarkar",
+        "Mr. Bishal Barman",
+        "Mr. Dipankar Das",
+        "Ms. Souvik Debnath",
+        "Mr. Rajbir Singh",
+        "Ms Aridra Sarkar",
+        "Mr. Balbir Singh",
+        "Ms. Neha Das"
     ]
 }
