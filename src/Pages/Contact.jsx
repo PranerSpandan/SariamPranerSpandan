@@ -30,7 +30,7 @@ const Contact = () => {
                     </p>
                     {/* Google Maps Embed iframe */}
                     <iframe 
-                        src="https://maps.google.com/maps?q=Sariam,+Debithakurbari,+Jalpaiguri,+West+Bengal,+735133&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                        src="https://maps.google.com/maps?q=Sariam+Praner+Spandan&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
                         height="200" 
                         frameBorder="0" 
