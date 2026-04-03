@@ -1,0 +1,21 @@
+{
+    "governingBody": [
+        { "name": "[Name Here]", "role": "President", "photo": "" },
+        { "name": "[Name Here]", "role": "Vice President", "photo": "" },
+        { "name": "[Name Here]", "role": "Secretary", "photo": "" },
+        { "name": "[Name Here]", "role": "Assistant Secretary", "photo": "" },
+        { "name": "[Name Here]", "role": "Treasurer", "photo": "" },
+        { "name": "[Name Here]", "role": "Assistant Treasurer", "photo": "" },
+        { "name": "[Name Here]", "role": "Executive Member", "photo": "" }
+    ],
+    "generalMembers": [
+        "Member Name 1",
+        "Member Name 2",
+        "Member Name 3",
+        "Member Name 4",
+        "Member Name 5",
+        "Member Name 6",
+        "Member Name 7",
+        "Member Name 8"
+    ]
+}

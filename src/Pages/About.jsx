@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const About = () => {
+    const [teamData, setTeamData] = useState({ governingBody: [], generalMembers: [] });
+
+    useEffect(() => {
+        fetch(`${import.meta.env.BASE_URL}team.json`)
+            .then(res => res.json())
+            .then(data => setTeamData(data))
+            .catch(err => console.error("Error loading team data:", err));
+    }, []);
+
+    const resolvePath = (path) => {
+        if (!path) return null;
+        if (path.startsWith('http') || path.startsWith('data:')) return path;
+        return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+    };
+
     return (
         <main className="page-container">
             <div className="page-header">
@@ -36,14 +51,35 @@ const About = () => {
                 </div>
                 
                 <div className="team-grid">
-                    {/* Placeholder Team Members */}
-                    {[1, 2, 3, 4].map((member) => (
-                        <div key={member} className="team-card">
+                    {teamData.governingBody.map((member, idx) => (
+                        <div key={idx} className="team-card">
                             <div className="team-avatar-placeholder">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                {member.photo ? (
+                                    <img src={resolvePath(member.photo)} alt={member.name} />
+                                ) : (
+                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                )}
                             </div>
-                            <h3>Member Name</h3>
-                            <p className="team-role">Governing Body</p>
+                            <h3>{member.name}</h3>
+                            <p className="team-role">{member.role}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="members-list-section">
+                <div className="gallery-header" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                    <h2 className="gallery-title" style={{ fontSize: '2rem' }}>General <span className="text-leaf">Members</span></h2>
+                    <p className="page-subtitle" style={{ margin: '1rem auto 0', maxWidth: '600px' }}>
+                        The roots of our organization. These dedicated individuals form the core volunteer base that drives our daily initiatives.
+                    </p>
+                </div>
+                
+                <div className="members-grid">
+                    {teamData.generalMembers.map((member, idx) => (
+                        <div key={idx} className="member-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="2"><path d="M5 12l5 5L20 7"></path></svg>
+                            <span>{member}</span>
                         </div>
                     ))}
                 </div>
@@ -99,6 +135,7 @@ const About = () => {
                     background: var(--surface-container);
                     padding: 5rem 3rem;
                     border-radius: var(--radius-xl);
+                    margin-bottom: 4rem;
                 }
                 .team-grid {
                     display: grid;
@@ -127,6 +164,12 @@ const About = () => {
                     align-items: center;
                     justify-content: center;
                     margin: 0 auto 1.5rem;
+                    overflow: hidden;
+                }
+                .team-avatar-placeholder img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
                 .team-card h3 {
                     color: var(--primary);
@@ -138,6 +181,31 @@ const About = () => {
                     font-weight: 600;
                     font-size: 0.9rem;
                     letter-spacing: 1px;
+                }
+
+                .members-list-section {
+                    background: transparent;
+                    padding: 3rem;
+                    border-radius: var(--radius-xl);
+                    border: 1px dashed var(--outline-variant);
+                }
+                .members-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1.5rem;
+                    margin-top: 3rem;
+                }
+                .member-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 1.1rem;
+                    color: var(--primary);
+                    font-weight: 500;
+                }
+                @media (max-width: 600px) {
+                    .team-section { padding: 3rem 1.5rem; }
+                    .members-list-section { padding: 2rem 1rem; }
                 }
             `}</style>
         </main>
