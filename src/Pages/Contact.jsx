@@ -182,16 +182,16 @@ const Contact = () => {
                 }
 
                 .social-banner {
-                    background: var(--primary-container);
-                    padding: 4rem;
-                    border-radius: var(--radius-xl);
+                    padding: 4rem 0;
                     text-align: center;
                     margin-top: 2rem;
+                    border-top: 1px dashed var(--outline-variant);
                 }
                 .social-banner h3 {
                     color: var(--primary);
                     font-size: 1.8rem;
-                    margin-bottom: 2rem;
+                    margin-bottom: 2.5rem;
+                    font-weight: 800;
                 }
                 .social-links-large {
                     display: flex;
@@ -203,19 +203,40 @@ const Contact = () => {
                     display: flex;
                     align-items: center;
                     gap: 12px;
-                    padding: 1rem 2.5rem;
+                    padding: 0.8rem 2rem;
                     border-radius: 100px;
-                    font-weight: 700;
+                    font-weight: 600;
+                    font-size: 1.1rem;
                     text-decoration: none;
-                    color: white;
-                    transition: transform 0.3s ease;
+                    color: var(--primary);
+                    background: transparent;
+                    border: 1.5px solid var(--outline-variant);
+                    transition: all 0.3s ease;
                 }
                 .social-pill:hover {
-                    transform: translateY(-3px);
+                    transform: translateY(-4px);
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
                 }
-                .instagram { background: #E1306C; }
-                .facebook { background: #1877F2; }
-                .youtube { background: #FF0000; }
+                .social-pill svg {
+                    transition: stroke 0.3s ease;
+                }
+                .instagram:hover {
+                    border-color: #E1306C;
+                    color: #E1306C;
+                }
+                .instagram:hover svg { stroke: #E1306C; }
+                
+                .facebook:hover {
+                    border-color: #1877F2;
+                    color: #1877F2;
+                }
+                .facebook:hover svg { stroke: #1877F2; }
+                
+                .youtube:hover {
+                    border-color: #FF0000;
+                    color: #FF0000;
+                }
+                .youtube:hover svg { stroke: #FF0000; }
             `}</style>
         </main>
     )
