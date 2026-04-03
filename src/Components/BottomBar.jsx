@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/SPS logo backgroundless.png'
 
 const BottomBar = () => {
@@ -17,10 +18,10 @@ const BottomBar = () => {
                 <div className="footer-links">
                     <h5 className="footer-title">Organization</h5>
                     <ul className="footer-ul">
-                        <li><a href="#about">About Our NGO</a></li>
-                        <li><a href="#projects">Success Stories</a></li>
-                        <li><a href="#impact">Sustainability</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><Link to="/about">About Our NGO</Link></li>
+                        <li><Link to="/work">Fields & Sectors</Link></li>
+                        <li><Link to="/join">Join the Movement</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
                 </div>
 

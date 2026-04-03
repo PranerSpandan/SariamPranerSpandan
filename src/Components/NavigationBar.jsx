@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/SPS logo backgroundless.png'
 
 const NavigationBar = () => {
@@ -7,27 +8,27 @@ const NavigationBar = () => {
     return (
         <header className="glass-header">
             <div className="logo-section">
-                <a href="/" className="logo-link">
+                <Link to="/" className="logo-link">
                     <img src={logo} alt="Sariam Praner Spandan Logo" className="navbar-logo" />
                     <span className="logo-text">Sariam Praner Spandan</span>
-                </a>
+                </Link>
             </div>
             
             <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
                    
-                    <li><a href="#about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</a></li>
-                    <li><a href="#gallery" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</a></li>
-                    <li><a href="#workwithus" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</a></li>
-                    <li><a href="#contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+                    <li><Link to="/about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+                    <li><Link to="/work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</Link></li>
+                    <li><Link to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</Link></li>
+                    <li><Link to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
                     <li className="mobile-cta">
-                         <a href="#donate" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</a>
+                         <Link to="/support" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</Link>
                     </li>
                 </ul>
             </nav>
 
             <div className="cta-container">
-                <a href="#donate" className="btn-primary">Support</a>
+                <Link to="/support" className="btn-primary">Support</Link>
             </div>
 
             <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Navigation">
