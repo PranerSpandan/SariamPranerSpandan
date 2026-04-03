@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/images/SPS logo backgroundless.png'
 
 const WorkSlideShow = () => {
@@ -18,8 +19,8 @@ const WorkSlideShow = () => {
                         from an early age — because the future belongs to those who plant it.
                     </p>
                     <div className="hero-cta-group">
-                        <a href="#work" className="btn-primary">Our Mission</a>
-                        <a href="#gallery" className="btn-secondary">View Gallery</a>
+                        <Link to="/about" className="btn-primary">Our Mission</Link>
+                        <Link to="/work" className="btn-secondary">View Gallery</Link>
                     </div>
                     <div className="impact-stats">
                         <div className="stat-item">
