@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Gallery from '../Components/Gallery'
 
 const Work = () => {
     const sectors = [
@@ -63,6 +64,11 @@ const Work = () => {
                         <p>{sector.desc}</p>
                     </div>
                 ))}
+            </div>
+
+            {/* Field Photos Gallery via CMS */}
+            <div style={{ marginTop: '5rem' }}>
+                <Gallery />
             </div>
 
             <style jsx>{`
