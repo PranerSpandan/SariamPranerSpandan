@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/images/SPS logo backgroundless.png'
 
 const NavigationBar = () => {
@@ -17,10 +17,10 @@ const NavigationBar = () => {
             <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
                    
-                    <li><Link to="/about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-                    <li><Link to="/work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</Link></li>
-                    <li><Link to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</Link></li>
-                    <li><Link to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+                    <li><NavLink to="/about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</NavLink></li>
+                    <li><NavLink to="/work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</NavLink></li>
+                    <li><NavLink to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</NavLink></li>
+                    <li><NavLink to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
                     <li className="mobile-cta">
                          <Link to="/support" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</Link>
                     </li>
@@ -72,9 +72,20 @@ const NavigationBar = () => {
                     color: var(--text-secondary);
                     transition: var(--transition);
                     text-decoration: none;
+                    padding: 0.6rem 1.4rem;
+                    border-radius: 100px;
+                    border: 1px solid transparent;
                 }
                 .nav-item:hover {
                     color: var(--primary);
+                }
+                .nav-item.active {
+                    color: var(--primary);
+                    background: rgba(37, 108, 44, 0.08);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    border: 1px solid rgba(37, 108, 44, 0.15);
+                    box-shadow: 0 4px 15px rgba(1, 58, 19, 0.04);
                 }
                 .mobile-cta {
                     display: none;
@@ -134,6 +145,7 @@ const NavigationBar = () => {
                     .nav-item {
                         font-size: 2rem;
                         font-weight: 700;
+                        padding: 1rem 2.5rem;
                     }
                     .mobile-cta {
                         display: block;
