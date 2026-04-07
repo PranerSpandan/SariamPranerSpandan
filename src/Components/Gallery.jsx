@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const Gallery = () => {
+const Gallery = ({ isHomePage = false }) => {
     const [items, setItems] = useState([])
     const [filter, setFilter] = useState('All')
     const [lightbox, setLightbox] = useState(null)
@@ -19,6 +20,7 @@ const Gallery = () => {
     }, [])
 
     const filtered = filter === 'All' ? items : items.filter(i => i.category === filter)
+    const displayedItems = isHomePage ? filtered.slice(0, 8) : filtered;
 
     const openLightbox = (item) => setLightbox(item)
     const closeLightbox = () => setLightbox(null)
@@ -65,9 +67,12 @@ const Gallery = () => {
 
             {/* Grid */}
             {loading ? (
-                <div className="gallery-loading">
-                    <div className="loader-leaf">🌿</div>
-                    <p>Loading gallery…</p>
+                <div className="gallery-grid">
+                    {[1, 2, 3, 4, 5, 6].map(i => (
+                        <div key={i} className="skeleton-item">
+                            <div className="skeleton-shimmer"></div>
+                        </div>
+                    ))}
                 </div>
             ) : filtered.length === 0 ? (
                 <div className="gallery-empty">
@@ -78,7 +83,7 @@ const Gallery = () => {
                 </div>
             ) : (
                 <div className="gallery-grid">
-                    {filtered.map((item, idx) => (
+                    {displayedItems.map((item, idx) => (
                         <div
                             key={item.id}
                             className={`gallery-item ${idx % 5 === 0 ? 'wide' : ''}`}
@@ -88,6 +93,7 @@ const Gallery = () => {
                             aria-label={`Open ${item.title}`}
                             onKeyDown={e => e.key === 'Enter' && openLightbox(item)}
                         >
+                            {/* ... same as before but limited ... */}
                             {item.type === 'video' ? (
                                 <video src={resolvePath(item.src)} muted loop className="gallery-media" />
                             ) : (
@@ -103,6 +109,18 @@ const Gallery = () => {
                             )}
                         </div>
                     ))}
+                </div>
+            )}
+
+            {/* See More Link for Homepage */}
+            {isHomePage && !loading && items.length > 8 && (
+                <div className="gallery-footer">
+                    <Link to="/work" className="btn-see-more">
+                        <span>Explore Full Gallery</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14m-7-7 7 7-7 7"/>
+                        </svg>
+                    </Link>
                 </div>
             )}
 
@@ -270,19 +288,64 @@ const Gallery = () => {
                     pointer-events: none;
                 }
 
-                /* Loading / Empty */
-                .gallery-loading, .gallery-empty {
-                    text-align: center;
-                    padding: 6rem;
-                    color: var(--text-secondary);
-                    max-width: 1400px;
-                    margin: 0 auto;
+                /* Loading / Skeletons */
+                .skeleton-item {
+                    border-radius: var(--radius-lg);
+                    background: var(--surface-container);
+                    position: relative;
+                    overflow: hidden;
+                    height: 100%;
                 }
-                .loader-leaf {
-                    font-size: 3rem;
-                    animation: spin-ring 2s linear infinite;
-                    display: inline-block;
-                    margin-bottom: 1rem;
+                .skeleton-shimmer {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(
+                        90deg,
+                        transparent 0%,
+                        rgba(255, 255, 255, 0.4) 50%,
+                        transparent 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: shimmer 1.5s infinite linear;
+                }
+                @keyframes shimmer {
+                    from { background-position: 200% 0; }
+                    to { background-position: -200% 0; }
+                }
+
+                /* Footer/See More */
+                .gallery-footer {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 4rem;
+                    max-width: 1400px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .btn-see-more {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 1rem 2.5rem;
+                    background: transparent;
+                    border: 1px solid var(--primary);
+                    color: var(--primary);
+                    border-radius: 100px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    transition: var(--transition);
+                }
+                .btn-see-more:hover {
+                    background: var(--primary);
+                    color: white;
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 25px rgba(1, 58, 19, 0.15);
+                }
+                .btn-see-more svg {
+                    transition: transform 0.3s ease;
+                }
+                .btn-see-more:hover svg {
+                    transform: translateX(5px);
                 }
 
                 /* Lightbox */

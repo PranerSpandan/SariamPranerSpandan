@@ -9,7 +9,7 @@ const Home = () => {
         <main>
             <WorkSlideShow />
             <AboutSection />
-            <Gallery />
+            <Gallery isHomePage={true} />
             <Kards />
         </main>
     )
