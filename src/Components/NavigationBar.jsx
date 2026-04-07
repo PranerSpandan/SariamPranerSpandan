@@ -52,13 +52,17 @@ const NavigationBar = () => {
                     <li ref={navRefs['/join']}><NavLink to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</NavLink></li>
                     <li ref={navRefs['/contact']}><NavLink to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
                     <li className="mobile-cta">
-                         <Link to="/support" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</Link>
+                         <Link to="/support" className="btn-support-animated" onClick={() => setIsMenuOpen(false)}>
+                            <span className="btn-text-shimmer">Support</span>
+                         </Link>
                     </li>
                 </ul>
             </nav>
 
             <div className="cta-container">
-                <Link to="/support" className="btn-primary">Support</Link>
+                <Link to="/support" className="btn-support-animated">
+                    <span className="btn-text-shimmer">Support</span>
+                </Link>
             </div>
 
             <button className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Navigation">
@@ -215,6 +219,83 @@ const NavigationBar = () => {
                     .hamburger.active .bar:nth-child(3) {
                         transform: translateY(-8px) rotate(-45deg);
                     }
+                }
+
+                /* Animated Support Button (Vengeance UI style) */
+                .btn-support-animated {
+                    position: relative;
+                    padding: 0.82rem 2.2rem;
+                    border-radius: 100px;
+                    background: var(--primary);
+                    color: white;
+                    font-weight: 700;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    transition: var(--transition);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    cursor: pointer;
+                    box-shadow: 0 10px 30px rgba(1, 58, 19, 0.15);
+                }
+
+                .btn-support-animated:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 15px 35px rgba(1, 58, 19, 0.25);
+                }
+
+                .btn-support-animated:active {
+                    transform: scale(0.96);
+                }
+
+                /* Border Shine Effect */
+                .btn-support-animated::before {
+                    content: "";
+                    position: absolute;
+                    inset: -1px;
+                    background: linear-gradient(
+                        90deg, 
+                        transparent 0%, 
+                        rgba(255, 255, 255, 0) 40%, 
+                        rgba(255, 255, 255, 0.5) 50%, 
+                        rgba(255, 255, 255, 0) 60%, 
+                        transparent 100%
+                    );
+                    background-size: 200% 100%;
+                    animation: border-shine 3s linear infinite;
+                    border-radius: 100px;
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask-composite: exclude;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    pointer-events: none;
+                }
+
+                /* Text Shimmer Effect */
+                .btn-text-shimmer {
+                    background: linear-gradient(
+                        -75deg, 
+                        #ffffff 40%, 
+                        rgba(255, 255, 255, 0.5) 50%, 
+                        #ffffff 60%
+                    );
+                    background-size: 200% 100%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: text-shimmer 3s linear infinite;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                @keyframes border-shine {
+                    from { background-position: 200% 0; }
+                    to { background-position: -200% 0; }
+                }
+
+                @keyframes text-shimmer {
+                    from { background-position: 200% 0; }
+                    to { background-position: -200% 0; }
                 }
 
                 @media (max-width: 500px) {
