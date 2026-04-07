@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import MovingIcon from '../Components/MovingIcon'
 
 const About = () => {
     const [teamData, setTeamData] = useState({ governingBody: [], generalMembers: [] });
@@ -57,7 +58,7 @@ const About = () => {
                                 {member.photo ? (
                                     <img src={resolvePath(member.photo)} alt={member.name} />
                                 ) : (
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    <MovingIcon name="user" size={40} color="currentColor" strokeWidth={1.5} />
                                 )}
                             </div>
                             <h3>{member.name}</h3>
@@ -78,7 +79,7 @@ const About = () => {
                 <div className="members-grid">
                     {teamData.generalMembers.map((member, idx) => (
                         <div key={idx} className="member-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" strokeWidth="2"><path d="M5 12l5 5L20 7"></path></svg>
+                            <MovingIcon name="check" size={20} color="var(--secondary)" strokeWidth={2} />
                             <span>{member}</span>
                         </div>
                     ))}

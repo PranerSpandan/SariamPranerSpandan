@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import MovingIcon from './MovingIcon'
 import c1 from '../assets/images/c1.jpg'
 import c3 from '../assets/images/c3.jpg'
 import c4 from '../assets/images/c4.jpg'
@@ -48,7 +49,7 @@ const Kards = () => {
                             <p className="card-description">{item.description}</p>
                             <Link to="/work" className="card-link">
                                 Explore Project
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                <MovingIcon name="arrow-right" size={20} color="currentColor" strokeWidth={2.5} />
                             </Link>
                         </div>
                     </div>

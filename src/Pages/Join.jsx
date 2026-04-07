@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import MovingIcon from '../Components/MovingIcon'
 
 const Join = () => {
     const [activeTab, setActiveTab] = useState('individual');
@@ -65,7 +66,9 @@ const Join = () => {
                 <div className="form-card">
                     {formStatus === 'success' ? (
                         <div className="success-feedback">
-                            <div className="check-icon">✓</div>
+                            <div className="check-icon">
+                                <MovingIcon name="check" size={40} color="white" strokeWidth={3} />
+                            </div>
                             <h3>Application Sent Successfully!</h3>
                             <p>Thank you for reaching out. Our team will review your details and get back to you shortly.</p>
                             <button onClick={resetForm} className="btn-secondary mt-4">Submit Another Response</button>

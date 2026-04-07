@@ -1,0 +1,313 @@
+/* Global styles for Moving Icons */
+.moving-icon-wrapper {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.moving-icon-svg {
+    overflow: visible;
+}
+
+/* Accessibility Icon Keyframes */
+@keyframes accessibility-group1Rotate {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes accessibility-group2Rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes accessibility-path3Rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-60deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Mail Check Icon Keyframes */
+@keyframes mailCheckAnimation {
+    0% { stroke-dashoffset: 9; opacity: 0; }
+    33% { stroke-dashoffset: 9; opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Map Pin Check Icon Keyframes */
+@keyframes mapPinZoomAnimation {
+    0% { transform: scale(1); }
+    30% { transform: scale(0.81); }
+    100% { transform: scale(1); }
+}
+
+@keyframes mapPinCheckAnimation {
+    0% { stroke-dashoffset: 9; opacity: 0; }
+    50% { stroke-dashoffset: 9; opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Phone Off Icon Keyframes */
+@keyframes phoneOffShake {
+    0% { transform: translateX(0); }
+    16.67% { transform: translateX(-7%); }
+    33.33% { transform: translateX(7%); }
+    50% { transform: translateX(-7%); }
+    66.67% { transform: translateX(7%); }
+    100% { transform: translateX(0); }
+}
+
+/* Arrow Slide Keyframes (for Right and Up) */
+@keyframes arrowSlideRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(25%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes arrowSlideUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-25%); }
+    100% { transform: translateY(0); }
+}
+
+/* Users Icon Keyframes */
+@keyframes users-user1Slide {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-5%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes users-user2Slide {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5%); }
+    100% { transform: translateX(0); }
+}
+
+/* Check Icon Keyframes */
+/* Social Media Animations */
+@keyframes socialTilt {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes socialScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.moving-icon-svg.animate.instagram,
+.moving-icon-svg.animate.facebook,
+.moving-icon-svg.animate.youtube {
+    animation: socialTilt 0.4s ease-in-out;
+}
+
+/* House Icon */
+.house-icon .door {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s ease, opacity 0.3s ease;
+}
+.moving-icon-svg.animate.house-icon .door {
+    animation: houseDoorAnimation 0.6s ease-out forwards;
+}
+
+@keyframes houseDoorAnimation {
+    0% { stroke-dashoffset: 22; opacity: 0; }
+    15% { stroke-dashoffset: 22; opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Book Icon */
+.moving-icon-svg.animate.book-icon {
+    animation: bookRotateAnimation 0.6s ease-in-out;
+}
+
+@keyframes bookRotateAnimation {
+    0% { transform: scale(1) rotate(0deg) translateY(0); }
+    20% { transform: scale(1.04) rotate(-8deg) translateY(-2px); }
+    50% { transform: scale(1.04) rotate(8deg) translateY(-2px); }
+    80% { transform: scale(1.04) rotate(-8deg) translateY(-2px); }
+    100% { transform: scale(1) rotate(0deg) translateY(0); }
+}
+
+/* Shield Check Icon */
+.shield-check-icon .check-path {
+    stroke-dasharray: 9;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.125s ease-out, opacity 0.125s ease-out;
+}
+.moving-icon-svg.animate.shield-check-icon .check-path {
+    animation: shieldCheckAnimation 0.5s ease-out backwards;
+}
+
+@keyframes shieldCheckAnimation {
+    0% { stroke-dashoffset: 9; opacity: 0; }
+    33% { stroke-dashoffset: 9; opacity: 0; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+/* Tree Sway Animation */
+@keyframes treeSway {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+.moving-icon-svg.animate.tree-icon {
+    animation: treeSway 1s ease-in-out;
+    transform-origin: bottom;
+}
+
+/* User (Singular) Icon */
+.user-path, .user-circle {
+    transition: transform 0.6s ease-in-out;
+}
+.moving-icon-svg.animate.user-icon .user-path {
+    animation: userPathBounce 0.6s ease-in-out;
+}
+.moving-icon-svg.animate.user-icon .user-circle {
+    animation: userCircleBounce 0.6s ease-in-out;
+}
+
+@keyframes userPathBounce {
+    0% { transform: translateY(0); }
+    33% { transform: translateY(2px); }
+    66% { transform: translateY(-2px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes userCircleBounce {
+    0% { transform: translateY(0); }
+    33% { transform: translateY(4px); }
+    66% { transform: translateY(-2px); }
+    100% { transform: translateY(0); }
+}
+
+/* Landmark Icon */
+.landmark-icon.animate .column-1 { opacity: 0; animation: fadeInLeft 0.35s ease-out 0.3s forwards; }
+.landmark-icon.animate .column-2 { opacity: 0; animation: fadeInLeft 0.35s ease-out 0.2s forwards; }
+.landmark-icon.animate .column-3 { opacity: 0; animation: fadeInLeft 0.35s ease-out 0.1s forwards; }
+.landmark-icon.animate .column-4 { opacity: 0; animation: fadeInLeft 0.35s ease-out 0s forwards; }
+.landmark-icon.animate .roof { opacity: 0; animation: fadeInTop 0.35s ease-out 0.4s forwards; }
+
+@keyframes fadeInLeft {
+    0%, 50% { opacity: 0; transform: translateX(-10px); }
+    80% { opacity: 0.8; transform: translateX(2px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInTop {
+    0%, 50% { opacity: 0; transform: translateY(-10px); }
+    80% { opacity: 0.8; transform: translateY(2px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Archive Icon */
+.archive-icon rect { transition: transform 0.2s ease-in; }
+.moving-icon-svg.animate.archive-icon rect { transform: translateY(-2px); }
+.archive-icon path { transition: transform 0.2s ease-in; }
+.moving-icon-svg.animate.archive-icon path { transform: translateY(2px); }
+
+/* Pencil Icon */
+.pencil-icon { overflow: visible; transform-origin: center; }
+.moving-icon-svg.animate.pencil-icon { animation: pencilJiggle 0.4s ease-in-out 2; }
+@keyframes pencilJiggle {
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+@keyframes checkIconAnimation {
+    0% { stroke-dashoffset: 22; }
+    100% { stroke-dashoffset: 0; }
+}
+
+/* Transitions and Animation Assignments */
+
+/* Accessibility */
+.accessibility-circle { transition: transform 0.3s ease; }
+.accessibility-group1 { transform-origin: center; transition: transform 0.3s ease; }
+.accessibility-group2 { transform-origin: 9px 16px; transition: transform 0.3s ease; }
+.accessibility-path3 { transform-origin: 8px 5px; transition: transform 0.3s ease; }
+
+.moving-icon-svg.animate.accessibility .accessibility-group1 { animation: accessibility-group1Rotate 0.8s ease-in-out; }
+.moving-icon-svg.animate.accessibility .accessibility-group2 { animation: accessibility-group2Rotate 1s ease-in-out 0.4s; }
+.moving-icon-svg.animate.accessibility .accessibility-path3 { animation: accessibility-path3Rotate 0.4s ease-in-out 0.2s; }
+
+/* Mail Check */
+.mail-check .check-path {
+    stroke-dasharray: 9;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.125s ease-out, opacity 0.125s ease-out;
+}
+.moving-icon-svg.animate.mail-check .check-path {
+    animation: mailCheckAnimation 0.5s ease-out backwards;
+}
+
+/* Map Pin Check */
+.map-pin-check .circle-map {
+    transform-origin: 12px 10px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.map-pin-check .check-path {
+    stroke-dasharray: 9;
+    stroke-dashoffset: 9;
+    opacity: 0;
+    transition: stroke-dashoffset 0.3s ease-out, opacity 0.3s ease-out;
+}
+.moving-icon-svg.animate.map-pin-check .circle-map {
+    animation: mapPinZoomAnimation 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.moving-icon-svg.animate.map-pin-check .check-path {
+    animation: mapPinCheckAnimation 0.7s ease-out forwards;
+}
+
+/* Phone Off */
+.phone-off {
+    transition: transform 0.6s ease-in-out;
+}
+.moving-icon-svg.animate.phone-off {
+    animation: phoneOffShake 0.6s ease-in-out;
+}
+
+/* Arrow Right */
+.arrow-right .line, .arrow-right .head {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.moving-icon-svg.animate.arrow-right .line,
+.moving-icon-svg.animate.arrow-right .head {
+    animation: arrowSlideRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Arrow Up */
+.arrow-up .line, .arrow-up .head {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.moving-icon-svg.animate.arrow-up .line,
+.moving-icon-svg.animate.arrow-up .head {
+    animation: arrowSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Users */
+.users-icon .user1-head, .users-icon .user1-body, .users-icon .user2-head, .users-icon .user2-body {
+    transition: transform 0.3s ease-in-out;
+}
+.moving-icon-svg.animate.users-icon .user1-head,
+.moving-icon-svg.animate.users-icon .user1-body {
+    animation: users-user1Slide 0.7s ease-in-out;
+}
+.moving-icon-svg.animate.users-icon .user2-head,
+.moving-icon-svg.animate.users-icon .user2-body {
+    animation: users-user2Slide 0.7s ease-in-out 0.1s;
+}
+
+/* Check */
+.check-icon .check-path {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.4s ease-in-out;
+}
+.moving-icon-svg.animate.check-icon .check-path {
+    animation: checkIconAnimation 0.4s ease-in-out;
+}

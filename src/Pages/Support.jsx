@@ -1,4 +1,5 @@
 import React from 'react'
+import MovingIcon from '../Components/MovingIcon'
 
 const Support = () => {
     return (
@@ -16,7 +17,9 @@ const Support = () => {
             <div className="support-grid">
                 {/* Bank Account Details */}
                 <div className="support-card bank-card">
-                    <div className="card-icon">🏦</div>
+                    <div className="card-icon">
+                        <MovingIcon name="landmark" size={40} color="var(--primary)" strokeWidth={1.5} />
+                    </div>
                     <h2>Direct Bank Transfer</h2>
                     <p className="support-desc">Donate directly to our official NGO bank account. All contributions are used entirely for our environmental programs.</p>
                     
@@ -43,7 +46,9 @@ const Support = () => {
                 <div className="secondary-supports">
                     {/* Material Support */}
                     <div className="support-card material-card">
-                        <div className="card-icon">📦</div>
+                        <div className="card-icon">
+                            <MovingIcon name="archive" size={40} color="var(--primary)" strokeWidth={1.5} />
+                        </div>
                         <h2>Material Support</h2>
                         <p className="support-desc">Prefer to donate equipment? Help us gather tools, books, and camp supplies by purchasing directly from our Amazon Wishlist.</p>
                         <a href="https://amazon.in/wishlist" target="_blank" rel="noopener noreferrer" className="btn-primary mt-2">
@@ -53,7 +58,9 @@ const Support = () => {
                     
                     {/* Tax Exemption Note */}
                     <div className="support-card note-card">
-                        <div className="card-icon">📝</div>
+                        <div className="card-icon">
+                            <MovingIcon name="pencil" size={40} color="var(--primary)" strokeWidth={1.5} />
+                        </div>
                         <h3>Tax Exemption</h3>
                         <p className="support-desc text-small">
                             We are pursuing 80G certification. Currently, donations are not tax-exempt, but every rupee is accounted for and strictly utilized for nature conservation.

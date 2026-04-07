@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Gallery from '../Components/Gallery'
+import MovingIcon from '../Components/MovingIcon'
 
 const Work = () => {
     const sectors = [
@@ -7,39 +8,28 @@ const Work = () => {
             title: "Afforestation & Sapling Drives",
             desc: "The backbone of our NGO. We identify barren lands, organize community-led tree plantation campaigns, and distribute saplings to domestic households ensuring long-term care.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22v-7l-2-2"></path>
-                    <path d="M17 8c-3.13 0-6 2.68-6 6"></path>
-                    <path d="M7 8c3.13 0 6 2.68 6 6"></path>
-                    <path d="M12 3v1"></path>
-                </svg>
+                <MovingIcon name="tree" size={40} color="var(--primary)" strokeWidth={1.5} />
             )
         },
         {
             title: "Environmental Education",
             desc: "We conduct nature study camps and school awareness programs to instill ecological consciousness in the next generation. We believe education is the root of preservation.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
-                </svg>
+                <MovingIcon name="book" size={40} color="var(--primary)" strokeWidth={1.5} />
             )
         },
         {
             title: "Wildlife Conservation",
             desc: "Working alongside local authorities, we help map biodiversity in the Jalpaiguri region, run rescue awareness protocols, and protect natural corridors for wildlife.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2v1c0 6.64 4 10.36 4 17a6 6 0 0 1-6 6c-3 0-5-2.5-5-6h-1c0 3.5-2 6-5 6a6 6 0 0 1-6-6Z"></path>
-                </svg>
+                <MovingIcon name="shield-check" size={40} color="var(--primary)" strokeWidth={1.5} />
             )
         },
         {
             title: "Sustainable Community Living",
             desc: "Promoting organic farming approaches and plastic-free zones within the community. We help establish systems where human habitation works in tandem with nature.",
             icon: (
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                </svg>
+                <MovingIcon name="house" size={40} color="var(--primary)" strokeWidth={1.5} />
             )
         }
     ]
