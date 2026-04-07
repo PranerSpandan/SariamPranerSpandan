@@ -1,9 +1,33 @@
-import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../assets/images/SPS logo backgroundless.png'
 
 const NavigationBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+    const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0, opacity: 0 });
+    
+    // Refs for each nav item to calculate position
+    const navRefs = {
+        '/about': useRef(null),
+        '/work': useRef(null),
+        '/join': useRef(null),
+        '/contact': useRef(null)
+    };
+
+    useEffect(() => {
+        const activeRef = navRefs[location.pathname];
+        if (activeRef && activeRef.current) {
+            const { offsetWidth, offsetLeft } = activeRef.current;
+            setIndicatorStyle({
+                width: offsetWidth,
+                left: offsetLeft,
+                opacity: 1
+            });
+        } else {
+            setIndicatorStyle(prev => ({ ...prev, opacity: 0 }));
+        }
+    }, [location.pathname]);
 
     return (
         <header className="glass-header">
@@ -16,11 +40,17 @@ const NavigationBar = () => {
             
             <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
-                   
-                    <li><NavLink to="/about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</NavLink></li>
-                    <li><NavLink to="/work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</NavLink></li>
-                    <li><NavLink to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</NavLink></li>
-                    <li><NavLink to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
+                    {/* The Sliding Liquid Drop Indicator */}
+                    <div className="nav-indicator" style={{
+                        width: indicatorStyle.width,
+                        transform: `translateX(${indicatorStyle.left}px)`,
+                        opacity: indicatorStyle.opacity
+                    }}></div>
+
+                    <li ref={navRefs['/about']}><NavLink to="/about" className="nav-item" onClick={() => setIsMenuOpen(false)}>About</NavLink></li>
+                    <li ref={navRefs['/work']}><NavLink to="/work" className="nav-item" onClick={() => setIsMenuOpen(false)}>Work</NavLink></li>
+                    <li ref={navRefs['/join']}><NavLink to="/join" className="nav-item" onClick={() => setIsMenuOpen(false)}>Join</NavLink></li>
+                    <li ref={navRefs['/contact']}><NavLink to="/contact" className="nav-item" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
                     <li className="mobile-cta">
                          <Link to="/support" className="btn-primary" onClick={() => setIsMenuOpen(false)}>Support</Link>
                     </li>
@@ -60,11 +90,25 @@ const NavigationBar = () => {
                 }
                 .nav-links {
                     display: flex;
-                    gap: 2rem;
+                    gap: 1.2rem;
                     list-style: none;
                     align-items: center;
                     margin: 0;
                     padding: 0;
+                    position: relative; /* Context for indicator */
+                }
+                .nav-indicator {
+                    position: absolute;
+                    height: 42px;
+                    background: rgba(37, 108, 44, 0.12);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border-radius: 100px;
+                    border: 1px solid rgba(37, 108, 44, 0.15);
+                    transition: all 0.6s cubic-bezier(0.5, 0, 0, 1.25);
+                    z-index: 0;
+                    pointer-events: none;
+                    box-shadow: 0 4px 15px rgba(1, 58, 19, 0.04);
                 }
                 .nav-item {
                     font-size: 1rem;
@@ -74,18 +118,15 @@ const NavigationBar = () => {
                     text-decoration: none;
                     padding: 0.6rem 1.4rem;
                     border-radius: 100px;
-                    border: 1px solid transparent;
+                    display: block;
+                    position: relative;
+                    z-index: 1;
                 }
                 .nav-item:hover {
                     color: var(--primary);
                 }
                 .nav-item.active {
                     color: var(--primary);
-                    background: rgba(37, 108, 44, 0.08);
-                    backdrop-filter: blur(10px);
-                    -webkit-backdrop-filter: blur(10px);
-                    border: 1px solid rgba(37, 108, 44, 0.15);
-                    box-shadow: 0 4px 15px rgba(1, 58, 19, 0.04);
                 }
                 .mobile-cta {
                     display: none;
@@ -142,10 +183,17 @@ const NavigationBar = () => {
                         flex-direction: column;
                         gap: 3rem;
                     }
+                    .nav-indicator {
+                        display: none; /* Liquid drop only for desktop row layout */
+                    }
                     .nav-item {
                         font-size: 2rem;
                         font-weight: 700;
                         padding: 1rem 2.5rem;
+                    }
+                    .nav-item.active {
+                        background: rgba(37, 108, 44, 0.08);
+                        border: 1px solid rgba(37, 108, 44, 0.15);
                     }
                     .mobile-cta {
                         display: block;
