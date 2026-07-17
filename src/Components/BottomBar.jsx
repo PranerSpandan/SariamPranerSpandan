@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import MovingIcon from './MovingIcon'
 import logo from '../assets/images/SPS logo backgroundless.png'
+import VisitorCounter from './VisitorCounter'
 
 const BottomBar = () => {
     return (
@@ -59,7 +60,10 @@ const BottomBar = () => {
             </div>
 
             <div className="footer-bottom">
-                 <p>© 2026 Sariam Praner Spandan. The Living Editorial Initiative.</p>
+                 <div className="footer-copy-container">
+                      <p>© 2026 Sariam Praner Spandan. The Living Editorial Initiative.</p>
+                      <VisitorCounter />
+                 </div>
                  <div className="footer-legal">
                     <a href="#">Privacy</a>
                     <a href="#">Terms</a>
@@ -148,6 +152,12 @@ const BottomBar = () => {
                     font-size: 0.85rem;
                     font-weight: 500;
                 }
+                .footer-copy-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    align-items: flex-start;
+                }
                 .footer-legal {
                     display: flex;
                     gap: 3rem;
@@ -159,6 +169,7 @@ const BottomBar = () => {
                 @media (max-width: 600px) {
                     .footer-grid { grid-template-columns: 1fr; }
                     .footer-bottom { flex-direction: column; gap: 1.5rem; text-align: center; }
+                    .footer-copy-container { align-items: center; }
                 }
             `}</style>
         </footer>
