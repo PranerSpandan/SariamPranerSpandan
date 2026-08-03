@@ -25,20 +25,24 @@ const Support = () => {
                     
                     <div className="bank-details">
                         <div className="detail-row">
+                            <span className="label">Bank Name:</span>
+                            <span className="value">Punjab National Bank</span>
+                        </div>
+                        <div className="detail-row">
                             <span className="label">Account Name:</span>
                             <span className="value">Sariam Praner Spandan</span>
                         </div>
                         <div className="detail-row">
                             <span className="label">Account Number:</span>
-                            <span className="value">XXXX-XXXX-XXXX-XXXX</span>
+                            <span className="value">1082201700026456</span>
                         </div>
                         <div className="detail-row">
                             <span className="label">IFSC Code:</span>
-                            <span className="value">XXXX0000000</span>
+                            <span className="value">PUNB0108220</span>
                         </div>
                         <div className="detail-row">
                             <span className="label">Branch:</span>
-                            <span className="value">Jalpaiguri Main Branch</span>
+                            <span className="value">Panikauri</span>
                         </div>
                     </div>
                 </div>
