@@ -5,15 +5,15 @@ const VisitorCounter = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const namespace = 'sariam-praner-spandan'
-    const key = 'visitor-counter'
+    const key = 'sariam-praner-spandan-visitor-counter'
     
     // Check if user has already visited in this session
     const hasVisited = sessionStorage.getItem('sps_visited')
-    let url = `https://api.counterapi.dev/v1/${namespace}/${key}/`
+    const url = hasVisited 
+      ? `https://countapi.mileshilliard.com/api/v1/get/${key}`
+      : `https://countapi.mileshilliard.com/api/v1/hit/${key}`;
     
     if (!hasVisited) {
-      url += 'up/'
       sessionStorage.setItem('sps_visited', 'true')
     }
 
@@ -23,9 +23,8 @@ const VisitorCounter = () => {
         return res.json()
       })
       .then((data) => {
-        const val = data ? (typeof data.count === 'number' ? data.count : data.value) : null;
-        if (typeof val === 'number') {
-          setCount(val)
+        if (data && typeof data.value === 'number') {
+          setCount(data.value)
         }
         setLoading(false)
       })

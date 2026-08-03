@@ -61,12 +61,12 @@ const BottomBar = () => {
 
             <div className="footer-bottom">
                  <div className="footer-copy-container">
-                      <p>© 2026 Sariam Praner Spandan. The Living Editorial Initiative.</p>
+                      <p>© {new Date().getFullYear()} Sariam Praner Spandan. The Living Editorial Initiative.</p>
                       <VisitorCounter />
                  </div>
                  <div className="footer-legal">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                    <Link to="/privacy">Privacy</Link>
+                    <Link to="/terms">Terms</Link>
                  </div>
             </div>
 

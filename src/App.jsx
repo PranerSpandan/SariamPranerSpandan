@@ -11,6 +11,8 @@ import Work from './Pages/Work'
 import Join from './Pages/Join'
 import Contact from './Pages/Contact'
 import Support from './Pages/Support'
+import Privacy from './Pages/Privacy'
+import Terms from './Pages/Terms'
 
 // Helper to scroll to top automatically when navigating between pages
 const ScrollToTop = () => {
@@ -35,6 +37,8 @@ const App = () => {
           <Route path="/join" element={<Join />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
         
         <BottomBar/>
