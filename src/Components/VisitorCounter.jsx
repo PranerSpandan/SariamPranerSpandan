@@ -23,8 +23,9 @@ const VisitorCounter = () => {
         return res.json()
       })
       .then((data) => {
-        if (data && typeof data.value === 'number') {
-          setCount(data.value)
+        const val = data ? (typeof data.count === 'number' ? data.count : data.value) : null;
+        if (typeof val === 'number') {
+          setCount(val)
         }
         setLoading(false)
       })
