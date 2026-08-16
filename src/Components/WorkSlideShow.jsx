@@ -5,280 +5,178 @@ import logo from '../assets/images/SPS logo backgroundless.png'
 const WorkSlideShow = () => {
     return (
         <section className="hero-section" id="home">
-            <div className="hero-grid">
-                {/* LEFT — Content */}
-                <div className="hero-content">
-                    <span className="hero-label">Green the Earth, Save the Planet</span>
-                    <h1 className="hero-title">
-                        Sariam Praner <br/>
-                        <span className="text-leaf">Spandan</span>
-                    </h1>
-                    <p className="hero-description">
-                        Dedicated to nature conservation through tree plantation and awareness. 
-                        We inspire children and school students to love and protect our planet 
-                        from an early age — because the future belongs to those who plant it.
-                    </p>
-                    <div className="hero-cta-group">
-                        <Link to="/about" className="btn-primary">Our Mission</Link>
-                        <Link to="/work" className="btn-secondary">View Gallery</Link>
-                    </div>
-                    <div className="impact-stats">
-                        <div className="stat-item">
-                            <span className="stat-value">10k+</span>
-                            <span className="stat-label">Trees Planted</span>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <span className="stat-value">50+</span>
-                            <span className="stat-label">Schools Reached</span>
-                        </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <span className="stat-value">2021</span>
-                            <span className="stat-label">Established</span>
-                        </div>
-                    </div>
-                </div>
+            <div className="hero-background">
+                <img 
+                    src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" 
+                    alt="Hands planting a sapling" 
+                    className="hero-bg-img"
+                />
+                <div className="hero-overlay"></div>
+            </div>
 
-                {/* RIGHT — Logo Visual */}
-                <div className="hero-visual">
-                    <div className="logo-glass-container">
-                        <div className="logo-orbit-ring ring-1"></div>
-                        <div className="logo-orbit-ring ring-2"></div>
-                        <div className="logo-bg-glow"></div>
-                        <img
-                            src={logo}
-                            alt="Sariam Praner Spandan — Green the Earth, Save the Planet"
-                            className="hero-logo"
-                        />
-                        <div className="floating-tag tag-1">
-                            <span className="tag-icon">🌱</span>
-                            <span className="tag-text">Tree Plantation</span>
-                        </div>
-                        <div className="floating-tag tag-2">
-                            <span className="tag-icon">📚</span>
-                            <span className="tag-text">Youth Awareness</span>
-                        </div>
-                        <div className="floating-tag tag-3">
-                            <span className="tag-icon">🏫</span>
-                            <span className="tag-text">Schools Outreach</span>
-                        </div>
+            <div className="hero-content-wrapper">
+                <div className="hero-content">
+                    <div className="hero-overline-pill">
+                        <span className="overline-icon">›</span> MEET OUR MOVEMENT
+                    </div>
+                    
+                    <h1 className="hero-title">
+                        Be the Pulse of Nature.<br />
+                        Save Our Home.
+                    </h1>
+                    
+                    <p className="hero-description">
+                        Sariam Praner Spandan exists because we are the voice of the 
+                        voiceless. We dedicate ourselves to restoring balance, bringing life 
+                        back to earth, and nurturing the soul of the Earth through our tree 
+                        planting, every heart every voice.
+                    </p>
+                    
+                    <div className="hero-cta-group">
+                        <Link to="/join" className="btn-solid-green">Join the Movement</Link>
+                        <Link to="/work" className="btn-outline-glass">Explore Initiatives</Link>
                     </div>
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
+                /* ── HERO WRAPPER ── */
                 .hero-section {
                     min-height: 100vh;
-                    padding: 9rem 5% 5rem;
-                    background: linear-gradient(145deg, #fcf9f4 0%, #eef4ec 60%, #f0ede8 100%);
                     position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding: 9rem 5% 6rem;
+                    /* Ensure nav bar sits on top */
+                    z-index: 1; 
+                }
+
+                /* ── BACKGROUND ── */
+                .hero-background {
+                    position: absolute;
+                    inset: 0;
+                    z-index: -1;
                     overflow: hidden;
                 }
-                .hero-grid {
-                    max-width: 1400px;
+                
+                .hero-bg-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .hero-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
+                }
+
+                /* ── CONTENT ── */
+                .hero-content-wrapper {
+                    max-width: 1280px;
                     margin: 0 auto;
-                    display: grid;
-                    grid-template-columns: 1.1fr 1fr;
-                    gap: 4rem;
-                    align-items: center;
+                    width: 100%;
                 }
-                .hero-label {
-                    color: var(--secondary);
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    font-size: 0.78rem;
-                    letter-spacing: 3px;
-                    margin-bottom: 2rem;
-                    display: inline-block;
+                
+                .hero-content {
+                    max-width: 650px;
                 }
-                .hero-title {
-                    font-size: 5.5rem;
-                    margin-bottom: 2rem;
-                    color: var(--primary);
-                    line-height: 1.05;
-                }
-                .text-leaf {
-                    color: var(--secondary);
-                }
-                .hero-description {
-                    font-size: 1.15rem;
-                    color: var(--text-secondary);
-                    max-width: 560px;
-                    margin-bottom: 3.5rem;
-                    line-height: 1.85;
-                }
-                .hero-cta-group {
-                    display: flex;
-                    gap: 1.2rem;
-                    margin-bottom: 4rem;
-                    flex-wrap: wrap;
-                }
-                .btn-secondary {
-                    background: rgba(255, 255, 255, 0.5);
-                    backdrop-filter: blur(12px);
-                    color: var(--primary);
-                    padding: 0.8rem 1.8rem;
-                    border-radius: 100px;
-                    font-weight: 600;
+
+                .hero-overline-pill {
                     display: inline-flex;
                     align-items: center;
-                    border: 1px solid rgba(193, 201, 189, 0.35);
-                    transition: var(--transition);
-                    font-size: 0.95rem;
+                    gap: 8px;
+                    background: rgba(255, 255, 255, 0.15);
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    color: white;
+                    padding: 6px 16px;
+                    border-radius: 100px;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 2rem;
                 }
-                .btn-secondary:hover {
-                    background: rgba(255, 255, 255, 0.75);
-                    transform: scale(1.03);
+                
+                .overline-icon {
+                    font-size: 1.2rem;
+                    line-height: 1;
+                    margin-bottom: 2px;
                 }
-                .impact-stats {
+
+                .hero-title {
+                    font-size: clamp(3rem, 5vw, 4.5rem);
+                    margin-bottom: 1.5rem;
+                    color: white;
+                    line-height: 1.1;
+                    font-family: 'Plus Jakarta Sans', serif; /* Or EB Garamond if you prefer serif */
+                    font-weight: 700;
+                }
+                
+                .hero-description {
+                    font-size: 1.1rem;
+                    color: rgba(255, 255, 255, 0.85);
+                    margin-bottom: 3rem;
+                    line-height: 1.6;
+                    font-weight: 400;
+                }
+
+                /* ── CTA BUTTONS ── */
+                .hero-cta-group {
                     display: flex;
-                    gap: 2.5rem;
-                    align-items: center;
+                    gap: 1rem;
                     flex-wrap: wrap;
                 }
-                .stat-value {
-                    display: block;
-                    font-family: 'Plus Jakarta Sans', sans-serif;
-                    font-size: 2.2rem;
-                    font-weight: 800;
-                    color: var(--primary);
-                    letter-spacing: -1px;
-                }
-                .stat-label {
-                    font-size: 0.75rem;
-                    color: var(--text-secondary);
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    letter-spacing: 1.2px;
-                    margin-top: 4px;
-                    display: block;
-                }
-                .stat-divider {
-                    width: 1px;
-                    height: 40px;
-                    background: #d4e0d4;
-                }
-
-                /* ── LOGO VISUAL ── */
-                .hero-visual {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .logo-glass-container {
-                    position: relative;
-                    width: 520px;
-                    height: 520px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-                .logo-orbit-ring {
-                    position: absolute;
-                    border-radius: 50%;
-                    border: 1px solid rgba(78, 148, 79, 0.15);
-                    animation: spin-ring 25s linear infinite;
-                }
-                .ring-1 {
-                    width: 440px;
-                    height: 440px;
-                    animation-duration: 30s;
-                }
-                .ring-2 {
-                    width: 520px;
-                    height: 520px;
-                    border-style: dashed;
-                    border-color: rgba(78, 148, 79, 0.1);
-                    animation-direction: reverse;
-                    animation-duration: 45s;
-                }
-                @keyframes spin-ring {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-                .logo-bg-glow {
-                    position: absolute;
-                    width: 360px;
-                    height: 360px;
-                    border-radius: 50%;
-                    background: radial-gradient(circle, rgba(78,148,79,0.12) 0%, transparent 70%);
-                    animation: pulse-glow 4s ease-in-out infinite;
-                }
-                @keyframes pulse-glow {
-                    0%, 100% { transform: scale(1); opacity: 0.7; }
-                    50% { transform: scale(1.08); opacity: 1; }
-                }
-                .hero-logo {
-                    width: 320px;
-                    height: 320px;
-                    object-fit: contain;
-                    position: relative;
-                    z-index: 3;
-                    filter: drop-shadow(0 30px 60px rgba(1, 58, 19, 0.15));
-                    animation: float-logo 6s ease-in-out infinite;
-                }
-                @keyframes float-logo {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-18px); }
-                }
-
-                /* Floating tags */
-                .floating-tag {
-                    position: absolute;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    background: rgba(255,255,255,0.75);
-                    backdrop-filter: blur(12px);
-                    padding: 10px 16px;
+                
+                .btn-solid-green {
+                    background: #002208;
+                    color: white;
+                    padding: 1rem 2.2rem;
                     border-radius: 100px;
-                    font-size: 0.82rem;
-                    font-weight: 700;
-                    color: var(--primary);
-                    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-                    border: 1px solid rgba(193, 201, 189, 0.3);
-                    white-space: nowrap;
-                    z-index: 4;
-                    animation: float-tag 5s ease-in-out infinite;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    border: 1px solid #002208;
                 }
-                .tag-1 {
-                    top: 60px;
-                    right: -20px;
-                    animation-delay: 0s;
+                
+                .btn-solid-green:hover {
+                    background: #013a13;
+                    transform: translateY(-2px);
                 }
-                .tag-2 {
-                    bottom: 80px;
-                    right: -10px;
-                    animation-delay: 1.5s;
+                
+                .btn-outline-glass {
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    -webkit-backdrop-filter: blur(10px);
+                    color: white;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    padding: 1rem 2.2rem;
+                    border-radius: 100px;
+                    font-weight: 600;
+                    font-size: 0.95rem;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
                 }
-                .tag-3 {
-                    bottom: 30px;
-                    left: 10px;
-                    animation-delay: 0.8s;
-                }
-                .tag-icon { font-size: 1rem; }
-                @keyframes float-tag {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-8px); }
+                
+                .btn-outline-glass:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-color: rgba(255, 255, 255, 0.5);
+                    transform: translateY(-2px);
                 }
 
-                @media (max-width: 1100px) {
-                    .hero-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
-                    .hero-description { margin: 0 auto 3.5rem; }
-                    .hero-cta-group { justify-content: center; }
-                    .impact-stats { justify-content: center; }
-                    .hero-title { font-size: 4rem; }
-                    .logo-glass-container { width: 380px; height: 380px; }
-                    .ring-1 { width: 320px; height: 320px; }
-                    .ring-2 { width: 380px; height: 380px; }
-                    .hero-logo { width: 240px; height: 240px; }
-                    .tag-1, .tag-2, .tag-3 { display: none; }
-                }
-                @media (max-width: 600px) {
-                    .hero-title { font-size: 3rem; }
-                    .logo-glass-container { width: 280px; height: 280px; }
-                    .hero-logo { width: 190px; height: 190px; }
+                @media (max-width: 768px) {
+                    .hero-title {
+                        font-size: 2.5rem;
+                    }
+                    .hero-content {
+                        margin-top: 2rem;
+                    }
+                    .hero-overlay {
+                        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+                    }
                 }
             `}</style>
         </section>

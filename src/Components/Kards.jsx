@@ -1,164 +1,197 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MovingIcon from './MovingIcon'
 import c1 from '../assets/images/c1.jpg'
 import c3 from '../assets/images/c3.jpg'
 import c4 from '../assets/images/c4.jpg'
 
+const initiatives = [
+    {
+        title: 'Tree Plantation',
+        description: 'Strategic reforestation in urban and rural areas to restore local ecosystems and biodiversity.',
+        image: c3,
+        icon: '🌿',
+        link: '/work'
+    },
+    {
+        title: 'Youth Awareness',
+        description: 'Empowering the next generation with environmental literacy and sustainable lifestyle workshops.',
+        image: c1,
+        icon: '🧠',
+        link: '/work'
+    },
+    {
+        title: 'School Outreach',
+        description: 'Collaborating with schools to integrate practical environmental projects into the curriculum.',
+        image: c4,
+        icon: '🏫',
+        link: '/work'
+    }
+]
+
 const Kards = () => {
-    const initiatives = [
-        {
-            title: "Tree Plantation Drive",
-            description: "Restoring the local ecosystem by planting thousands of native tree species in across the region.",
-            image: c3,
-            label: "Conservation",
-            color: "#e2f1e1"
-        },
-        {
-            title: "Schools Outreach",
-            description: "Connecting with students to foster a lifelong relationship with nature through workshops and events.",
-            image: c1,
-            label: "Awareness",
-            color: "#f8f3e5"
-        },
-        {
-            title: "Future Guardians",
-            description: "Empowering children to take the lead in environmental protection through hands-on activities.",
-            image: c4,
-            label: "Youth Lead",
-            color: "#e8f0fe"
-        }
-    ];
-
     return (
-        <section className="bg-accent" id="work">
-            <div className="section-header">
-                <span className="section-label">What We Do</span>
-                <h2 className="section-title">Our Sustainable <br/><span className="text-leaf">Initiatives</span></h2>
-            </div>
-
-            <div className="initiatives-grid">
-                {initiatives.map((item, index) => (
-                    <div className="initiative-card" key={index}>
-                        <div className="card-media">
-                            <img src={item.image} alt={item.title} />
-                            <span className="card-badge" style={{ backgroundColor: item.color }}>{item.label}</span>
-                        </div>
-                        <div className="card-body">
-                            <h3 className="card-title">{item.title}</h3>
-                            <p className="card-description">{item.description}</p>
-                            <Link to="/work" className="card-link">
-                                Explore Project
-                                <MovingIcon name="arrow-right" size={20} color="currentColor" strokeWidth={2.5} />
-                            </Link>
-                        </div>
+        <section className="kards-section" id="initiatives">
+            <div className="kards-container">
+                <div className="kards-header">
+                    <div className="kards-header-left">
+                        <span className="kards-overline">What We Do</span>
+                        <h2 className="kards-title">Key Strategic Initiatives</h2>
                     </div>
-                ))}
+                    <Link to="/work" className="kards-view-all">View All Programs →</Link>
+                </div>
+
+                <div className="kards-grid">
+                    {initiatives.map((item, index) => (
+                        <div className="initiative-card" key={index}>
+                            <div className="card-img-wrapper">
+                                <img src={item.image} alt={item.title} className="card-img" />
+                            </div>
+                            <div className="card-body-content">
+                                <div className="card-icon-ring">
+                                    <span className="card-icon">{item.icon}</span>
+                                </div>
+                                <h3 className="card-heading">{item.title}</h3>
+                                <p className="card-desc">{item.description}</p>
+                                <Link to={item.link} className="card-learn-more">
+                                    Learn more &nbsp;→
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
 
-            <style jsx>{`
-                .section-header {
-                    margin-bottom: 5rem;
-                    max-width: 1300px;
-                    margin: 0 auto 5rem;
+            <style>{`
+                .kards-section {
+                    padding: 7rem 5%;
+                    background: #ffffff;
                 }
-                .section-label {
-                    color: var(--secondary);
-                    font-weight: 700;
-                    letter-spacing: 3px;
-                    text-transform: uppercase;
-                    font-size: 0.8rem;
-                }
-                .section-title {
-                    font-size: 4rem;
-                    margin-top: 1.5rem;
-                    color: var(--primary);
-                    line-height: 1.2;
-                }
-                .text-leaf { color: var(--secondary); }
-
-                .initiatives-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                    gap: 3rem;
-                    max-width: 1400px;
+                .kards-container {
+                    max-width: 1280px;
                     margin: 0 auto;
                 }
+                .kards-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-bottom: 3rem;
+                }
+                .kards-header-left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+                }
+                .kards-overline {
+                    display: inline-block;
+                    color: #256c2c;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 0.72rem;
+                    letter-spacing: 4px;
+                    font-family: 'Inter', sans-serif;
+                }
+                .kards-title {
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-size: clamp(2rem, 3.5vw, 2.8rem);
+                    font-weight: 800;
+                    color: #002208;
+                    margin: 0;
+                    line-height: 1.2;
+                }
+                .kards-view-all {
+                    color: #002208;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    transition: var(--transition);
+                    display: none;
+                }
+                .kards-view-all:hover { text-decoration: underline; }
 
+                .kards-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.8rem;
+                }
+
+                /* Card */
                 .initiative-card {
-                    background: var(--surface-lowest);
-                    border-radius: var(--radius-xl);
+                    background: #f0ede8;
+                    border-radius: 1.5rem;
                     overflow: hidden;
                     transition: var(--transition);
-                    cursor: pointer;
                     position: relative;
-                    /* Ambient Light Shadow */
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
                 }
                 .initiative-card:hover {
-                    box-shadow: 0 40px 80px rgba(28, 28, 25, 0.08);
                     transform: translateY(-8px);
+                    box-shadow: 0 24px 48px rgba(37, 108, 44, 0.15);
                 }
 
-                .card-media {
+                .card-img-wrapper {
                     width: 100%;
-                    height: 320px;
+                    height: 260px;
                     overflow: hidden;
-                    position: relative;
                 }
-                .card-media img {
+                .card-img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
                 }
-                .initiative-card:hover .card-media img {
-                    transform: scale(1.1);
-                }
-
-                .card-badge {
-                    position: absolute;
-                    top: 24px;
-                    right: 24px;
-                    padding: 8px 16px;
-                    border-radius: 100px;
-                    font-weight: 700;
-                    font-size: 0.7rem;
-                    color: var(--primary);
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
+                .initiative-card:hover .card-img {
+                    transform: scale(1.08);
                 }
 
-                .card-body {
-                    padding: var(--spacing-8);
+                .card-body-content {
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
                 }
-                .card-title {
-                    font-size: 1.75rem;
-                    margin-bottom: 1.2rem;
-                    color: var(--primary);
-                }
-                .card-description {
-                    font-size: 1.05rem;
-                    color: var(--text-secondary);
-                    margin-bottom: 2.5rem;
-                    line-height: 1.75;
-                }
-                .card-link {
+                .card-icon-ring {
+                    width: 48px;
+                    height: 48px;
+                    background: white;
+                    border-radius: 50%;
                     display: flex;
                     align-items: center;
-                    gap: 12px;
-                    color: var(--secondary);
-                    font-weight: 800;
+                    justify-content: center;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+                }
+                .card-icon { font-size: 1.3rem; }
+                .card-heading {
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #002208;
+                    margin: 0;
+                }
+                .card-desc {
+                    color: #414940;
                     font-size: 0.95rem;
+                    line-height: 1.7;
+                    margin: 0;
+                }
+                .card-learn-more {
+                    display: inline-block;
+                    color: #256c2c;
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    text-decoration: none;
                     transition: var(--transition);
+                    margin-top: 0.5rem;
+                    font-family: 'Inter', sans-serif;
                 }
-                .card-link:hover {
-                    gap: 18px;
+                .card-learn-more:hover {
+                    transform: translateX(4px);
                 }
-                
+
                 @media (max-width: 900px) {
-                    .initiatives-grid { grid-template-columns: 1fr; }
-                    .section-title { font-size: 3rem; }
+                    .kards-grid { grid-template-columns: 1fr; }
+                    .kards-view-all { display: none !important; }
+                }
+                @media (min-width: 900px) {
+                    .kards-view-all { display: block; }
                 }
             `}</style>
         </section>
