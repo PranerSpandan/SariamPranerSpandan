@@ -22,7 +22,7 @@ const Support = () => {
                     </div>
                     <h2>Direct Bank Transfer</h2>
                     <p className="support-desc">Donate directly to our official NGO bank account. All contributions are used entirely for our environmental programs.</p>
-                    
+
                     <div className="bank-details">
                         <div className="detail-row">
                             <span className="label">Bank Name:</span>
@@ -55,11 +55,11 @@ const Support = () => {
                         </div>
                         <h2>Material Support</h2>
                         <p className="support-desc">Prefer to donate equipment? Help us gather tools, books, and camp supplies by purchasing directly from our Amazon Wishlist.</p>
-                        <a href="https://amazon.in/wishlist" target="_blank" rel="noopener noreferrer" className="btn-primary mt-2">
+                        <a href="https://www.amazon.in/hz/wishlist/ls/29B119G5QRXQM?ref_=wl_share" target="_blank" rel="noopener noreferrer" className="btn-primary mt-2">
                             View Amazon Wishlist
                         </a>
                     </div>
-                    
+
                     {/* Tax Exemption Note */}
                     <div className="support-card note-card">
                         <div className="card-icon">
