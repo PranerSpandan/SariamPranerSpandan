@@ -105,6 +105,7 @@ In the project directory, you can run:
 ## 🌐 SEO & Search Indexing
 
 - **Google Search Console**: Ownership is verified via the `<meta name="google-site-verification" ... />` tag in `index.html`.
+- **Google Analytics**: Integrated using `gtag.js` with property ID `G-EJT73Y122B` in `index.html` to monitor website traffic and user engagement.
 - **Sitemap**: Available at `https://pranerspandan.github.io/SariamPranerSpandan/sitemap.xml`.
 - **Robots.txt**: Directives hosted at `https://pranerspandan.github.io/SariamPranerSpandan/robots.txt`.
 
